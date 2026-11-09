@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鉴黄师下载官网 - 审核工具与训练数据资源导航</title>
+<meta name="description" content="鉴黄师下载官网汇聚内容审核工具、训练数据集、违规判定规则库与审核员实操案例，面向内容安全从业者与想要了解审核机制的学习者，提供具体工具与判断依据。">
+<meta name="keywords" content="内容审核工具,违规样本库,审核员训练,图像识别模型,审核规则库">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1f3a'/%3E%3Cpath d='M20 32l8 8 16-18' stroke='%23f5b942' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c1f3a;
+  --ink-soft:#3c4066;
+  --muted:#6b6f8f;
+  --line:#e2e4ef;
+  --paper:#f5f6fb;
+  --panel:#ffffff;
+  --brand:#1c1f3a;
+  --brand-2:#343a6b;
+  --accent:#f5b942;
+  --accent-soft:#fdf3da;
+  --ok:#2f8f6b;
+  --warn:#c2573a;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 6px 22px rgba(28,31,58,.08);
+  --shadow-sm:0 2px 8px rgba(28,31,58,.06);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --sticky-h:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--paper);
+  line-height:1.75;font-size:15.5px;
+}
+a{color:inherit;text-decoration:none}
+ul,ol{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4{margin:0;line-height:1.35}
+p{margin:0 0 12px}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* ===== 吸顶区域 ===== */
+.sticky-wrap{position:sticky;top:0;z-index:60}
+.notice-bar{
+  background:var(--ink);color:#e9eaf5;font-size:13px;
+  padding:7px 20px;display:flex;gap:14px;align-items:center;
+  overflow:hidden;white-space:nowrap;
+}
+.notice-bar .tag{
+  background:var(--accent);color:var(--ink);font-weight:700;
+  padding:1px 9px;border-radius:99px;font-size:12px;flex:none;
+}
+.notice-bar .scroll{
+  overflow:hidden;text-overflow:ellipsis;flex:1;
+}
+.notice-bar a{color:var(--accent);font-weight:600}
+
+.site-header{
+  background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(28,31,58,.05);
+}
+.header-inner{
+  max-width:1360px;margin:0 auto;padding:10px 24px;
+  display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;flex:none}
+.brand-mark{width:40px;height:40px;flex:none}
+.brand-text{font-size:20px;font-weight:800;letter-spacing:.5px;color:var(--ink)}
+.brand-sub{font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:-2px}
+
+.main-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1;min-width:260px}
+.main-nav a{
+  padding:6px 12px;border-radius:99px;font-size:14px;color:var(--ink-soft);
+  transition:.15s;
+}
+.main-nav a:hover{background:var(--accent-soft);color:var(--ink)}
+.header-actions{display:flex;gap:8px;align-items:center;flex:none}
+.search-box{display:flex;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:3px 4px 3px 14px}
+.search-box input{
+  border:0;background:transparent;outline:none;font-size:13.5px;width:150px;color:var(--ink);
+}
+.search-box button{
+  border:0;background:var(--brand);color:#fff;border-radius:99px;
+  padding:6px 14px;font-size:13px;font-weight:600;
+}
+.btn-ghost{
+  border:1px solid var(--line);background:#fff;border-radius:99px;
+  padding:7px 16px;font-size:13.5px;font-weight:600;color:var(--ink-soft);
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--ink)}
+
+/* ===== 布局 ===== */
+.container{max-width:1360px;margin:0 auto;padding:0 24px}
+.portal{
+  display:grid;
+  grid-template-columns:178px minmax(0,1fr) 250px;
+  gap:26px;align-items:start;padding:26px 0 50px;
+}
+.channel-col,.side-col{position:sticky;top:calc(var(--sticky-h) + 16px)}
+.channel-col{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 12px;box-shadow:var(--shadow-sm);
+}
+.channel-title,.side-title{
+  font-size:12.5px;letter-spacing:1.5px;color:var(--muted);font-weight:700;
+  padding:0 6px 10px;border-bottom:1px dashed var(--line);margin-bottom:10px;
+}
+.channel-list li a{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 8px;border-radius:var(--radius-sm);font-size:14px;color:var(--ink-soft);
+}
+.channel-list li a:hover{background:var(--accent-soft);color:var(--ink)}
+.channel-list .count{font-size:11px;color:var(--muted);background:var(--paper);border-radius:99px;padding:0 7px}
+.side-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;margin-bottom:18px;box-shadow:var(--shadow-sm);
+}
+.rank-item{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.rank-item:last-child{border-bottom:0}
+.rank-no{
+  width:21px;height:21px;flex:none;border-radius:6px;background:var(--paper);
+  color:var(--muted);font-size:12px;font-weight:700;display:grid;place-items:center;margin-top:3px;
+}
+.rank-item:nth-child(1) .rank-no,.rank-item:nth-child(2) .rank-no,.rank-item:nth-child(3) .rank-no{
+  background:var(--accent);color:var(--ink);
+}
+.rank-name{font-weight:600;color:var(--ink);line-height:1.5}
+.rank-meta{font-size:11.5px;color:var(--muted)}
+
+/* ===== 首屏 ===== */
+.hero{
+  background:linear-gradient(135deg,#1c1f3a 0%,#2b3060 55%,#3a4179 100%);
+  color:#f2f3fb;border-radius:20px;overflow:hidden;position:relative;
+  padding:40px 38px;margin-bottom:28px;box-shadow:var(--shadow);
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:320px;height:320px;
+  background:radial-gradient(circle,rgba(245,185,66,.32),transparent 66%);
+  border-radius:50%;
+}
+.hero-inner{position:relative;z-index:2;max-width:680px}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  padding:4px 13px;border-radius:99px;margin-bottom:16px;color:#f6e6c2;
+}
+.hero h1{font-size:clamp(28px,3.6vw,42px);letter-spacing:1px;margin-bottom:14px}
+.hero-desc{font-size:15.5px;line-height:1.85;color:#d7d9ee;margin-bottom:22px;max-width:600px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-btn{
+  background:var(--accent);color:var(--ink);font-weight:700;border-radius:99px;
+  padding:10px 24px;font-size:14.5px;border:0;
+}
+.hero-btn.alt{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.hero-stat b{display:block;font-size:22px;color:var(--accent)}
+.hero-stat span{font-size:12.5px;color:#b9bcd9}
+.hero-art{position:absolute;right:30px;bottom:-10px;width:250px;opacity:.9;z-index:1}
+
+/* ===== 通用板块 ===== */
+.section{margin-bottom:34px;scroll-margin-top:calc(var(--sticky-h) + 18px)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.section-head h2{font-size:21px;display:flex;align-items:center;gap:10px}
+.section-head h2::before{content:"";width:5px;height:21px;background:var(--accent);border-radius:3px}
+.section-note{font-size:12.5px;color:var(--muted)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-sm)}
+
+/* 概览 */
+.overview p{color:var(--ink-soft);font-size:15px}
+.overview b{color:var(--ink)}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:16px}
+.item-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);
+  transition:.18s;
+}
+.item-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#cdd2e8}
+.item-card img{width:100%;height:132px;object-fit:cover;background:var(--paper)}
+.card-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-title{font-size:15.5px;font-weight:700;line-height:1.45}
+.type-tag{
+  display:inline-block;font-size:11.5px;font-weight:700;color:#7a5a12;
+  background:var(--accent-soft);border-radius:99px;padding:1px 9px;margin-right:6px;
+}
+.mini-tags{display:flex;flex-wrap:wrap;gap:6px}
+.mini-tags span{
+  font-size:11.5px;color:var(--muted);background:var(--paper);border-radius:99px;padding:1px 9px;
+}
+.card-desc{font-size:13px;color:var(--ink-soft);line-height:1.7;flex:1}
+.card-meta{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:9px}
+
+/* 列表 */
+.feed-list li{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:flex-start}
+.feed-list li:last-child{border-bottom:0}
+.feed-time{flex:none;width:92px;font-size:12px;color:var(--muted);padding-top:2px}
+.feed-title{font-weight:600;font-size:14.5px}
+.feed-sum{font-size:13px;color:var(--ink-soft);margin-top:2px}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px 16px;display:flex;flex-direction:column;gap:3px;transition:.15s;
+}
+.cat-item:hover{border-color:var(--accent);background:#fffdf7}
+.cat-name{font-weight:700;font-size:14.5px}
+.cat-desc{font-size:12px;color:var(--muted)}
+
+/* 深度解析 */
+.deep h3{font-size:17px;margin:22px 0 8px;padding-left:12px;border-left:4px solid var(--accent)}
+.deep h3:first-child{margin-top:0}
+.deep p{color:var(--ink-soft)}
+.deep ul{margin:10px 0 16px;padding-left:0}
+.deep ul li{position:relative;padding-left:18px;margin-bottom:7px;color:var(--ink-soft);font-size:14.5px}
+.deep ul li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-weight:700}
+.compare-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:9px 11px;text-align:left}
+.compare-table th{background:var(--paper);font-weight:700}
+.compare-table td{color:var(--ink-soft)}
+
+/* 步骤 */
+.steps{counter-reset:step;display:grid;gap:12px}
+.step{
+  counter-increment:step;display:flex;gap:14px;align-items:flex-start;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;
+}
+.step::before{
+  content:counter(step);flex:none;width:28px;height:28px;border-radius:50%;
+  background:var(--brand);color:var(--accent);font-weight:800;font-size:14px;
+  display:grid;place-items:center;
+}
+.step b{display:block;font-size:14.5px;margin-bottom:2px}
+.step span{font-size:13px;color:var(--ink-soft)}
+
+/* FAQ */
+.faq details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:0 16px;margin-bottom:10px;
+}
+.faq summary{
+  cursor:pointer;padding:14px 0;font-weight:600;font-size:14.5px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--accent);font-weight:800;font-size:17px}
+.faq details[open] summary::after{content:"－"}
+.faq .ans{padding:0 0 15px;font-size:13.8px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:11px}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:13px}
+.comment{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 15px;
+}
+.comment-top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px}
+.comment-user{font-weight:700;color:var(--ink)}
+.comment-text{font-size:13.5px;color:var(--ink-soft);line-height:1.7}
+
+/* 资讯 */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.news-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+.news-card img{width:100%;height:140px;object-fit:cover;background:var(--paper)}
+.news-body{padding:13px 15px 16px}
+.news-date{font-size:11.5px;color:var(--muted);margin-bottom:5px}
+.news-title{font-weight:700;font-size:14.5px;line-height:1.5;margin-bottom:6px}
+.news-sum{font-size:13px;color:var(--ink-soft)}
+
+/* 相关推荐 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px}
+.rec-tags a{
+  background:var(--panel);border:1px solid var(--line);border-radius:99px;
+  padding:7px 15px;font-size:13.5px;color:var(--ink-soft);transition:.15s;
+}
+.rec-tags a:hover{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+
+/* 时间线 */
+.timeline{border-left:2px solid var(--line);padding-left:20px;margin-left:6px}
+.tl-item{position:relative;padding-bottom:18px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:"";position:absolute;left:-27px;top:5px;width:11px;height:11px;border-radius:50%;
+  background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px var(--accent);
+}
+.tl-date{font-size:11.5px;color:var(--muted);margin-bottom:2px}
+.tl-title{font-weight:700;font-size:14px}
+.tl-desc{font-size:13px;color:var(--ink-soft)}
+
+/* 页尾 */
+.site-footer{background:var(--ink);color:#c9cde6;padding:40px 0 26px;margin-top:20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;max-width:1360px;margin:0 auto;padding:0 24px}
+.footer-brand .brand-text{color:#fff}
+.footer-desc{font-size:13px;color:#9ea3c4;margin-top:10px;line-height:1.8}
+.footer-col h4{font-size:13.5px;color:#fff;margin-bottom:12px;letter-spacing:.5px}
+.footer-col a{display:block;font-size:13px;color:#a7acd0;padding:3px 0}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{
+  max-width:1360px;margin:26px auto 0;padding:16px 24px 0;border-top:1px solid rgba(255,255,255,.1);
+  font-size:12px;color:#8a8fb3;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.no-result{display:none;padding:16px;background:var(--accent-soft);border-radius:var(--radius-sm);color:#7a5a12;font-size:13.5px;margin-top:12px}
+.no-result.show{display:block}
+
+/* ===== 响应式 ===== */
+@media(max-width:1100px){
+  .portal{grid-template-columns:160px minmax(0,1fr);}
+  .side-col{display:none}
+}
+@media(max-width:860px){
+  .portal{grid-template-columns:minmax(0,1fr);}
+  .channel-col{position:static;order:2}
+  .main-col{order:1}
+  .channel-list{display:flex;flex-wrap:wrap;gap:6px}
+  .channel-list li a{background:var(--paper);border-radius:99px;padding:6px 13px;font-size:13px}
+  .channel-list .count{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-art{display:none}
+}
+@media(max-width:740px){
+  .header-inner{padding:10px 16px;gap:12px}
+  .main-nav{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;min-width:0}
+  .main-nav a{white-space:nowrap}
+  .search-box input{width:110px}
+  .container{padding:0 16px}
+  .hero{padding:28px 22px}
+  .hero-stats{gap:18px}
+  .footer-grid{grid-template-columns:1fr}
+  .comment-grid,.card-grid,.cat-grid,.news-grid{grid-template-columns:1fr}
+  .feed-list li{flex-direction:column;gap:3px}
+  .feed-time{width:auto}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="sticky-wrap">
+  <div class="notice-bar">
+    <span class="tag">更新</span>
+    <span class="scroll">本周新增 12 套审核训练样本 · 11 月 6 日上线「直播违规判定」规则包 · 图像分级工具 v3.2 发布</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="鉴黄师下载官网 首页">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1c1f3a"/>
+          <circle cx="26" cy="30" r="11" fill="none" stroke="#f5b942" stroke-width="4"/>
+          <path d="M34 38l12 12" stroke="#f5b942" stroke-width="5" stroke-linecap="round"/>
+          <path d="M20 30l4 4 8-9" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <div class="brand-text">鉴黄师下载官网</div>
+          <div class="brand-sub">审核工具 · 训练样本 · 规则库</div>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选工具</a>
+        <a href="/#feed">更新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <input id="globalSearch" type="search" placeholder="搜索工具或样本…" aria-label="搜索页面内容">
+          <button type="button" id="searchBtn">查找</button>
+        </div>
+        <a class="btn-ghost" href="/#picks">下载入口</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="container" id="top">
+  <!-- 主题首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-kicker">内容安全从业者资源导航</span>
+      <h1>鉴黄师下载官网</h1>
+      <p class="hero-desc">这里汇集内容审核方向的具体工具与资料：图像分级工具、违规样本库、审核规则包、判定标准文档与一线审核员的实操案例，覆盖从入门训练到日常复核的完整链路。</p>
+      <div class="hero-actions">
+        <a class="hero-btn" href="/#picks">查看精选工具</a>
+        <a class="hero-btn alt" href="/#deep">了解判定规则</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>126</b><span>套训练样本集</span></div>
+        <div class="hero-stat"><b>38</b><span>个审核规则包</span></div>
+        <div class="hero-stat"><b>11-08</b><span>榜单更新日期</span></div>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 260 220" aria-hidden="true">
+      <rect x="24" y="38" width="150" height="104" rx="10" fill="#ffffff" opacity=".14"/>
+      <rect x="40" y="56" width="118" height="10" rx="5" fill="#f5b942" opacity=".85"/>
+      <rect x="40" y="76" width="90" height="8" rx="4" fill="#ffffff" opacity=".5"/>
+      <rect x="40" y="92" width="104" height="8" rx="4" fill="#ffffff" opacity=".35"/>
+      <circle cx="196" cy="150" r="38" fill="none" stroke="#f5b942" stroke-width="7" opacity=".85"/>
+      <path d="M222 176l22 22" stroke="#f5b942" stroke-width="9" stroke-linecap="round" opacity=".85"/>
+      <path d="M180 150l12 12 22-26" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+    </svg>
+  </section>
+
+  <!-- 三栏门户 -->
+  <div class="portal">
+    <!-- 左频道索引 -->
+    <aside class="channel-col" aria-label="频道索引">
+      <div class="channel-title">频道索引</div>
+      <ul class="channel-list">
+        <li><a href="/#overview">领域概览<span class="count">1</span></a></li>
+        <li><a href="/#picks">精选工具<span class="count">8</span></a></li>
+        <li><a href="/#feed">更新动态<span class="count">10</span></a></li>
+        <li><a href="/#categories">分类入口<span class="count">8</span></a></li>
+        <li><a href="/#deep">深度解析<span class="count">4</span></a></li>
+        <li><a href="/#guide">体验指南<span class="count">5</span></a></li>
+        <li><a href="/#faq">常见问答<span class="count">6</span></a></li>
+        <li><a href="/#comments">用户评论<span class="count">14</span></a></li>
+        <li><a href="/#news">相关资讯<span class="count">6</span></a></li>
+        <li><a href="/#recommend">相关推荐<span class="count">8</span></a></li>
+        <li><a href="/#timeline">条目时间线<span class="count">6</span></a></li>
+      </ul>
+    </aside>
+
+    <!-- 中主内容 -->
+    <main class="main-col">
+
+      <!-- 1 领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-head"><h2>主题领域概览</h2><span class="section-note">内容审核方向全景</span></div>
+        <div class="panel overview">
+          <p><b>鉴黄师下载官网</b>所指向的内容审核领域，并不是单一工具就能覆盖的。它至少包含四类具体物料：<b>图像与视频分级工具</b>、<b>违规样本数据集</b>、<b>平台规则与判定标准文档</b>、以及<b>审核员训练与考核题库</b>。工具负责批量初筛，样本库决定模型与人工的判定边界，规则文档约束复核尺度，训练题库则用于新人上岗前的判断力校准。</p>
+          <p>这两年一个明显变化是：审核对象从静态图片扩展到直播流、短视频帧序列和 AI 生成图。相应资料也在细化——例如「直播违规判定规则包」把裸露、低俗动作、诱导性场景拆成可逐项打分的条目；图像分级工具开始区分「明确违规」「存疑待复核」「场景误判」三档，而不是简单二元判断。对使用者来说，选对工具不如先弄清自己需要哪一层判定能力。</p>
+          <p>当前值得关注的还有样本库的标注粒度。较早的样本集只标「违规/正常」，新的数据集会记录遮挡比例、人物姿态、场景类型、是否 AI 生成等字段，直接决定后续模型的可解释性。如果你在做审核流程搭建，优先看样本字段表，比看工具界面更有用。</p>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="section" id="picks">
+        <div class="section-head"><h2>精选内容推荐</h2><span class="section-note">8 个可直接使用的工具与资料</span></div>
+        <div class="card-grid">
+
+          <article class="item-card">
+            <img src="https://picsum.photos/seed/shenhe-tool01/400/300" alt="图像分级工具 v3.2 界面示意" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><span class="type-tag">工具</span>图像分级工具 v3.2</div>
+              <div class="mini-tags"><span>批量初筛</span><span>三档判定</span><span>本地部署</span></div>
+              <p class="card-desc">支持批量导入图片并按三档输出判定结果，带遮挡比例与场景类型字段，适合搭建初筛环节。</p>
+              <div class="card-meta"><span>评分 4.7</span><span>11-06 更新</span></div>
+            </div>
+          </article>
+
+          <article class="item-card">
+            <img src="https://picsum.photos/seed/yangben-data02/400/300" alt="短视频违规样本集封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><span class="type-tag">样本库</span>短视频违规样本集 2026 版</div>
+              <div class="mini-tags"><span>帧序列标注</span><span>12 类场景</span><span>含误判对照</span></div>
+              <p class="card-desc">按帧序列标注的短视频样本，覆盖 12 类高频场景，附带误判对照组，用于校准模型阈值。</p>
+              <div class="card-meta"><span>样本 8600 条</span><span>10-29 发布</span></div>
+            </div>
+          </article>
+
+          <article class="item-card">
+            <img src="https://picsum.photos/seed/zhibo-guize03/400/300" alt="直播违规判定规则包文档封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><span class="type-tag">规则包</span>直播违规判定规则包</div>
+              <div class="mini-tags"><span>实时复核</span><span>逐项打分</span><span>场景拆解</span></div>
+              <p class="card-desc">把直播中的裸露、低俗动作、诱导场景拆成可逐项打分的条目，适合实时审核岗对照使用。</p>
+              <div class="card-meta"><span>条目 47 项</span><span>11-06 上线</span></div>
+            </div>
+          </article>
+
+          <article class="item-card">
+            <img src="https://picsum.photos/seed/xunlian-tiku04/400/300" alt="审核员训练题库界面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><span class="type-tag">训练</span>审核员上岗训练题库</div>
+              <div class="mini-tags"><span>判断力校准</span><span>分级题组</span><span>错题复盘</span></div>
+              <p class="card-desc">按难度分级的判断题组，覆盖边界场景与易混淆类型，适合新人上岗前做判断力校准。</p>
+              <div class="card-meta"><span>题目 1200 道</span><span>10-24 更新</span></div>
+            </div>
+          </article>
+
+          <article class="item-card">
+            <img src="https://picsum.photos/seed/aifangtu05/400/300" alt="AI 生成图识别样本示例" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><span class="type-tag">样本库</span>AI 生成图识别样本组</div>
+              <div class="mini-tags"><span>合成图</span><span>特征标注</span><span>对比组</span></div>
+              <p class="card-desc">收集合成图与实拍图对照组，标注手部、纹理、光影等典型区分特征，用于识别训练。</p>
+              <div class="card-meta"><span>样本 2400 组</span><span>11-01 发布</span></div>
+            </div>
+          </article>
+
+          <article class="item-card">
+            <img src="https://picsum.photos/seed/pingfen-biaozhun06/400/300" alt="内容安全评分标准文档" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><span class="type-tag">文档</span>内容安全评分标准（2026 修订）</div>
+              <div class="mini-tags"><span>评分维度</span><span>复核尺度</span><span>争议处理</span></div>
+              <p class="card-desc">给出违规程度的分档评分维度与复核尺度，包含争议案例的处理流程参考。</p>
+              <div class="card-meta"><span>页数 86 页</span><span>10-18 修订</span></div>
+            </div>
+          </article>
+
+          <article class="item-card">
+            <img src="https://picsum.photos/seed/pianguan-liti07/400/300" alt="批量审核流水线配置面板" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><span class="type-tag">工具</span>批量审核流水线配置面板</div>
+              <div class="mini-tags"><span>任务编排</span><span>人工兜底</span><span>阈值调节</span></div>
+              <p class="card-desc">把模型初筛、规则过滤、人工复核串成可配置流水线，支持按场景调节阈值。</p>
+              <div class="card-meta"><span>评分 4.5</span><span>10-31 更新</span></div>
+            </div>
+          </article>
+
+          <article class="item-card">
+            <img src="https://picsum.photos/seed/yiwu-dangan08/400/300" alt="典型误判案例档案封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><span class="type-tag">档案</span>典型误判案例档案</div>
+              <div class="mini-tags"><span>误判复盘</span><span>场景归因</span><span>修正建议</span></div>
+              <p class="card-desc">整理医疗、泳装、艺术摄影等易误判场景的真实案例，逐条给出误判归因与修正建议。</p>
+              <div class="card-meta"><span>案例 96 例</span><span>10-21 更新</span></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="no-result" id="searchEmpty">没有找到匹配的工具或样本，换个关键词试试。</div>
+      </section>
+
+      <!-- 3 最新更新 / 动态 -->
+      <section class="section" id="feed">
+        <div class="section-head"><h2>最新更新与动态</h2><span class="section-note">按时间倒序 · 截至 2026-11-08</span></div>
+        <div class="panel">
+          <ul class="feed-list">
+            <li><span class="feed-time">今天 09:30</span><div><div class="feed-title">直播违规判定规则包新增「诱导性场景」子项</div><div class="feed-sum">新增 6 个可逐项打分的场景条目，实时审核岗可先对照试用。</div></div></li>
+            <li><span class="feed-time">今天 08:15</span><div><div class="feed-title">图像分级工具 v3.2 修复遮挡比例误算</div><div class="feed-sum">高遮挡样本的判定结果更稳定，批量导入速度提升约两成。</div></div></li>
+            <li><span class="feed-time">昨天 21:10</span><div><div class="feed-title">短视频违规样本集 2026 版开放第二批下载</div><div class="feed-sum">追加 1800 条帧序列样本，覆盖夜间场景与运动画面。</div></div></li>
+            <li><span class="feed-time">昨天 16:40</span><div><div class="feed-title">审核员训练题库更新 60 道边界判断题</div><div class="feed-sum">集中在泳装、艺术摄影与医疗场景三类易混淆题型。</div></div></li>
+            <li><span class="feed-time">11-06</span><div><div class="feed-title">内容安全评分标准 2026 修订版发布</div><div class="feed-sum">调整争议案例的复核流程，新增两级申诉说明。</div></div></li>
+            <li><span class="feed-time">11-04</span><div><div class="feed-title">AI 生成图识别样本组新增手部特征分类</div><div class="feed-sum">按手指数量、关节结构、纹理连贯性细分标注字段。</div></div></li>
+            <li><span class="feed-time">11-02</span><div><div class="feed-title">典型误判案例档案收录 12 例医疗场景误判</div><div class="feed-sum">逐条给出模型的触发原因与人工复核建议。</div></div></li>
+            <li><span class="feed-time">10-30</span><div><div class="feed-title">批量审核流水线配置面板支持阈值分组</div><div class="feed-sum">不同场景可绑定独立阈值，减少统一阈值带来的误伤。</div></div></li>
+            <li><span class="feed-time">10-27</span><div><div class="feed-title">「场景误判」标签体系更新</div><div class="feed-sum">新增 4 个误判归因标签，与样本库字段保持一致。</div></div></li>
+            <li><span class="feed-time">10-22</span><div><div class="feed-title">审核规则包新增合成图专项条目</div><div class="feed-sum">针对 AI 生成内容补充判定说明与典型样本引用。</div></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="section" id="categories">
+        <div class="section-head"><h2>分类入口</h2><span class="section-note">按审核环节与内容类型划分</span></div>
+        <div class="cat-grid">
+          <a class="cat-item" href="/#picks"><span class="cat-name">图像分级</span><span class="cat-desc">批量初筛与三档判定</span></a>
+          <a class="cat-item" href="/#picks"><span class="cat-name">直播审核</span><span class="cat-desc">实时复核与逐项打分</span></a>
+          <a class="cat-item" href="/#picks"><span class="cat-name">样本标注</span><span class="cat-desc">帧序列与字段规范</span></a>
+          <a class="cat-item" href="/#deep"><span class="cat-name">规则文档</span><span class="cat-desc">判定标准与评分维度</span></a>
+          <a class="cat-item" href="/#picks"><span class="cat-name">AI 生成图</span><span class="cat-desc">合成图识别与特征</span></a>
+          <a class="cat-item" href="/#picks"><span class="cat-name">误判复盘</span><span class="cat-desc">典型场景归因分析</span></a>
+          <a class="cat-item" href="/#guide"><span class="cat-name">新人训练</span><span class="cat-desc">判断力校准与题库</span></a>
+          <a class="cat-item" href="/#timeline"><span class="cat-name">更新记录</span><span class="cat-desc">版本与条目变化</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="section" id="deep">
+        <div class="section-head"><h2>深度解析：审核判定到底看什么</h2><span class="section-note">工具、样本与规则的配合</span></div>
+        <div class="panel deep">
+          <p>很多刚接触内容审核的人会把「鉴黄」理解成单一的图片识别，实际上一套可用的判定体系要同时处理<b>明确违规、边界存疑、场景误判</b>三类情况。工具解决的是前两类，规则文档决定第二类怎么裁量，误判档案则不断修正第三类。三者缺一，审核结论就会不稳定。</p>
+
+          <h3>图像分级工具的三档输出怎么读</h3>
+          <p>三档设计的价值在于把「不确定」显式暴露出来，而不是硬压成二分类。通常的读法是：</p>
+          <ul>
+            <li><b>明确违规</b>：裸露比例、姿态、场景同时满足规则条目，可直接进入处置流程。</li>
+            <li><b>存疑待复核</b>：命中部分条件但存在遮挡、画质或场景歧义，需要人工二次判断。</li>
+            <li><b>场景误判</b>：医疗、游泳、艺术摄影等合规场景被模型误触，应回流到误判档案。</li>
+          </ul>
+          <p>如果工具只给「是/否」两个结果，人工复核的压力会全部转移到末端，反而更慢。选工具时先看它是否保留存疑档和误判标签。</p>
+
+          <h3>样本库的字段比数量更重要</h3>
+          <p>评估一个违规样本集，先看字段表而不是样本总数。有用的字段至少包括：遮挡比例、人物姿态、场景类型、是否 AI 生成、判定置信区间。字段缺失的样本集很难用于阈值调优，因为你无法解释模型为什么在这批样本上表现好或差。</p>
+          <p>以短视频样本为例，帧序列标注比单帧标注更能反映动作类违规，但成本也更高。如果样本集只有单帧标注，做动作识别时就要额外补充连续帧对照。</p>
+
+          <h3>规则包与评分标准的分工</h3>
+          <p>规则包面向一线执行，回答「这一条算不算违规、算到哪一档」；评分标准面向复核与争议处理，回答「两档之间怎么裁量、申诉怎么走」。两者经常被混用，结果是同一场景在不同班次得出不同结论。</p>
+          <table class="compare-table">
+            <thead><tr><th>资料类型</th><th>主要用途</th><th>典型使用者</th></tr></thead>
+            <tbody>
+              <tr><td>违规判定规则包</td><td>逐项打分的执行依据</td><td>实时审核岗</td></tr>
+              <tr><td>内容安全评分标准</td><td>分档裁量与争议复核</td><td>复核岗、质检岗</td></tr>
+              <tr><td>误判案例档案</td><td>误判归因与修正</td><td>模型调优、培训岗</td></tr>
+              <tr><td>训练题库</td><td>新人判断力校准</td><td>培训岗、新人审核员</td></tr>
+            </tbody>
+          </table>
+
+          <h3>AI 生成图带来的新判断维度</h3>
+          <p>合成图让「是否真实拍摄」本身成为判定变量。常见的区分特征包括手部结构、纹理连贯性、光影一致性，但单项特征并不可靠，通常需要两到三项同时异常才建议标为存疑。样本组里如果有同一提示词生成的对照图，判断效率会明显提高。</p>
+          <p>值得注意的是，合成图样本的标注要区分「内容违规」与「合成痕迹」两个维度，混在一起标注会让后续模型学到错误的关联。</p>
+        </div>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-head"><h2>体验指南：从哪一层开始用</h2><span class="section-note">按使用目的排序</span></div>
+        <div class="steps">
+          <div class="step"><div><b>先确定你要的是工具还是判断依据</b><span>想批量处理内容，从图像分级工具和流水线面板入手；想搭流程或培训人，先读评分标准和规则包。</span></div></div>
+          <div class="step"><div><b>用误判档案校准阈值</b><span>拿误判案例档案里的医疗、泳装、艺术摄影样本跑一遍你的工具，看存疑档是否被正确保留。</span></div></div>
+          <div class="step"><div><b>再用样本库验证字段可用性</b><span>检查样本字段能否回答「为什么判错」，字段不足时先补标注规范，再谈模型调优。</span></div></div>
+          <div class="step"><div><b>规则包对照评分标准一起看</b><span>同一个场景在两份资料里的表述是否一致，不一致处往往就是班次结论分歧的来源。</span></div></div>
+          <div class="step"><div><b>新人从训练题库的错误复盘开始</b><span>先做边界判断题，再看错题归因，比直接看规则条文更容易建立判断手感。</span></div></div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="section" id="faq">
+        <div class="section-head"><h2>常见问答</h2><span class="section-note">围绕具体工具与判定</span></div>
+        <div class="faq">
+          <details>
+            <summary>图像分级工具的「存疑待复核」档一般占多大比例？</summary>
+            <div class="ans">取决于场景构成。以日常社交内容为主的样本，存疑档通常占 8%—15%；直播截帧和艺术类内容比例更高。存疑档太低说明阈值过松，太高则说明规则条目不清晰，需要回到评分标准调整。</div>
+          </details>
+          <details>
+            <summary>短视频违规样本集的帧序列标注和单帧标注有什么区别？</summary>
+            <div class="ans">单帧标注只记录某一帧的判定，适合静态特征；帧序列标注会记录动作起止与连续变化，更能反映动作类违规。做动作识别时优先选帧序列样本，否则模型容易把单帧误判当成整体结论。</div>
+          </details>
+          <details>
+            <summary>直播违规判定规则包里的「逐项打分」怎么用？</summary>
+            <div class="ans">按条目逐项判断是否命中，命中后累加对应分值，再对照档位区间给出结论。关键是每项都要有明确的命中说明，不能只看总分，否则复核时无法解释扣分来源。</div>
+          </details>
+          <details>
+            <summary>AI 生成图识别一般看哪几个特征最有效？</summary>
+            <div class="ans">手部结构、纹理连贯性、光影一致性三项最常用，但单项都不可靠。实践中建议两到三项同时异常才标存疑，并优先使用同提示词生成的对照组辅助判断。</div>
+          </details>
+          <details>
+            <summary>第一次接触审核工作，从哪个资料开始看比较好？</summary>
+            <div class="ans">建议先看典型误判案例档案，建立「哪些场景容易判错」的直觉；再读内容安全评分标准了解分档逻辑；最后用训练题库自测。直接读规则条文容易记不住条目之间的关系。</div>
+          </details>
+          <details>
+            <summary>规则包和评分标准说法不一致时以哪个为准？</summary>
+            <div class="ans">执行层面以规则包为准，争议复核以评分标准为准。两者不一致时应记录具体条目并提交给规则维护方，不宜在现场临时自定尺度，否则同一场景在不同班次会出现不同结论。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-head"><h2>用户评论</h2><span class="section-note">来自审核岗与模型调优岗的反馈</span></div>
+        <div class="comment-grid">
+          <div class="comment"><div class="comment-top"><span class="comment-user">林间有风</span><span>11-07</span></div><div class="comment-text">图像分级工具 v3.2 的存疑档挺好用，医疗图误判少了很多，就是批量导入偶尔要等。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">审核小周</span><span>11-07</span></div><div class="comment-text">直播规则包新增的诱导场景条目描述很清楚，现场对照比之前省时间。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">南岸数据组</span><span>11-06</span></div><div class="comment-text">短视频样本集的帧序列标注确实比单帧好用，动作类误判下降明显，就是文件有点大。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">半夏微凉</span><span>11-06</span></div><div class="comment-text">训练题库的边界题不错，新人做一遍错题复盘，判断口径统一多了。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">老陈复核</span><span>11-05</span></div><div class="comment-text">评分标准修订版的争议处理流程写得比上一版细，申诉环节终于有明确节点。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">AI观察员</span><span>11-05</span></div><div class="comment-text">AI 生成图样本组的手部特征分类实用，但建议再加一栏提示词来源，方便追溯。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">流水线阿凯</span><span>11-04</span></div><div class="comment-text">配置面板支持阈值分组后，泳装场景的误伤明显减少，这个改动很实在。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">小鹿质检</span><span>11-03</span></div><div class="comment-text">误判案例档案里医疗场景那几例很有代表性，但数量还可以再多一些。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">北岸模型组</span><span>11-02</span></div><div class="comment-text">样本字段表比样本总数重要这句话说到点子上，我们调阈值时深有体会。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">夜班审核员</span><span>11-01</span></div><div class="comment-text">夜班场景样本补进来之后，暗光误判的问题好多了，希望继续扩充。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">江上清风</span><span>10-30</span></div><div class="comment-text">整体资料挺全，就是部分文档需要注册后才能看全文，稍微有点门槛。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">培训岗阿May</span><span>10-28</span></div><div class="comment-text">题库难度分级合理，新人从基础组做起接受度很高，错题解析也具体。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">像素猎人</span><span>10-27</span></div><div class="comment-text">合成图识别那块建议补一些低分辨率样本，实际业务里画质差的更多。</div></div>
+          <div class="comment"><div class="comment-top"><span class="comment-user">复核老李</span><span>10-25</span></div><div class="comment-text">规则包和评分标准对照着看确实能发现不一致的地方，已经提交了两条意见。</div></div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-head"><h2>相关资讯</h2><span class="section-note">审核方向近期动态</span></div>
+        <div class="news-grid">
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/zixun-zhibo11/600/400" alt="直播审核规则更新相关配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-date">2026-11-06</div>
+              <div class="news-title">直播违规判定规则包新增诱导场景子项</div>
+              <div class="news-sum">新增条目覆盖打赏诱导、私域引流等场景，实时审核岗可对照打分。</div>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/zixun-yangben12/600/400" alt="短视频违规样本集第二批发布配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-date">2026-11-05</div>
+              <div class="news-title">短视频违规样本集第二批开放 1800 条</div>
+              <div class="news-sum">补充夜间场景与运动画面，帧序列标注字段同步更新。</div>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/zixun-aifangtu13/600/400" alt="AI 生成图标注规范讨论配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-date">2026-11-04</div>
+              <div class="news-title">AI 生成图标注新增手部特征分类字段</div>
+              <div class="news-sum">按手指数量、关节结构、纹理连贯性细分，便于对照判断。</div>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/zixun-pingfen14/600/400" alt="内容安全评分标准修订版发布配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-date">2026-11-02</div>
+              <div class="news-title">内容安全评分标准 2026 修订版调整申诉流程</div>
+              <div class="news-sum">争议案例新增两级申诉节点，复核岗操作路径更明确。</div>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/zixun-wupan15/600/400" alt="误判案例档案医疗场景配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-date">2026-10-30</div>
+              <div class="news-title">误判案例档案收录 12 例医疗场景误判</div>
+              <div class="news-sum">逐条给出模型触发原因与人工复核建议，适合阈值调优参考。</div>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/zixun-tiku16/600/400" alt="审核员训练题库更新配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-date">2026-10-24</div>
+              <div class="news-title">审核员训练题库新增 60 道边界判断题</div>
+              <div class="news-sum">集中在泳装、艺术摄影与医疗场景，附错题归因说明。</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="section" id="recommend">
+        <div class="section-head"><h2>相关推荐</h2><span class="section-note">延伸方向与具体条目</span></div>
+        <div class="rec-tags">
+          <a href="/#picks">遮挡比例阈值调优</a>
+          <a href="/#deep">直播截帧复核流程</a>
+          <a href="/#picks">合成图特征对照表</a>
+          <a href="/#guide">新人判断力训练路径</a>
+          <a href="/#deep">评分维度与分档裁量</a>
+          <a href="/#picks">误判案例归因标签</a>
+          <a href="/#timeline">规则包版本记录</a>
+          <a href="/#faq">争议案例申诉节点</a>
+        </div>
+      </section>
+
+      <!-- 11 补充：条目时间线 -->
+      <section class="section" id="timeline">
+        <div class="section-head"><h2>条目时间线</h2><span class="section-note">近期资料与工具版本变化</span></div>
+        <div class="panel">
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-date">2026-11-06</div><div class="tl-title">直播违规判定规则包 v2.4</div><div class="tl-desc">新增诱导性场景 6 项，条目总数 47 项。</div></div>
+            <div class="tl-item"><div class="tl-date">2026-11-05</div><div class="tl-title">短视频违规样本集第二批</div><div class="tl-desc">追加 1800 条帧序列样本，覆盖夜间与运动场景。</div></div>
+            <div class="tl-item"><div class="tl-date">2026-11-01</div><div class="tl-title">AI 生成图识别样本组</div><div class="tl-desc">新增手部特征分类字段，对照组扩充至 2400 组。</div></div>
+            <div class="tl-item"><div class="tl-date">2026-10-31</div><div class="tl-title">批量审核流水线配置面板</div><div class="tl-desc">支持按场景绑定独立阈值，人工兜底节点可配置。</div></div>
+            <div class="tl-item"><div class="tl-date">2026-10-21</div><div class="tl-title">典型误判案例档案</div><div class="tl-desc">收录医疗、泳装、艺术摄影案例累计 96 例。</div></div>
+            <div class="tl-item"><div class="tl-date">2026-10-18</div><div class="tl-title">内容安全评分标准修订</div><div class="tl-desc">调整争议处理流程，新增两级申诉说明。</div></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="side-col" aria-label="辅助信息">
+      <div class="side-card">
+        <div class="side-title">热榜 · 2026-11-08</div>
+        <div class="rank-item"><span class="rank-no">1</span><div><div class="rank-name">图像分级工具 v3.2</div><div class="rank-meta">评分 4.7 · 11-06 更新</div></div></div>
+        <div class="rank-item"><span class="rank-no">2</span><div><div class="rank-name">直播违规判定规则包</div><div class="rank-meta">47 项条目 · 11-06 上线</div></div></div>
+        <div class="rank-item"><span class="rank-no">3</span><div><div class="rank-name">短视频违规样本集</div><div class="rank-meta">8600 条 · 10-29 发布</div></div></div>
+        <div class="rank-item"><span class="rank-no">4</span><div><div class="rank-name">审核员训练题库</div><div class="rank-meta">1200 道 · 10-24 更新</div></div></div>
+        <div class="rank-item"><span class="rank-no">5</span><div><div class="rank-name">AI 生成图识别样本组</div><div class="rank-meta">2400 组 · 11-01 发布</div></div></div>
+        <div class="rank-item"><span class="rank-no">6</span><div><div class="rank-name">内容安全评分标准</div><div class="rank-meta">86 页 · 10-18 修订</div></div></div>
+      </div>
+
+      <div class="side-card">
+        <div class="side-title">下载提示</div>
+        <p style="font-size:13px;color:var(--ink-soft);margin:0 0 8px">工具与样本需按页面说明获取；规则文档与评分标准可在线阅读摘要。</p>
+        <a href="/#picks" style="font-size:13px;font-weight:700;color:var(--warn)">前往精选工具 →</a>
+      </div>
+
+      <div class="side-card">
+        <div class="side-title">分类速览</div>
+        <ul style="font-size:13px;color:var(--ink-soft)">
+          <li style="padding:4px 0">图像分级 · 直播审核</li>
+          <li style="padding:4px 0">样本标注 · 规则文档</li>
+          <li style="padding:4px 0">AI 生成图 · 误判复盘</li>
+          <li style="padding:4px 0">新人训练 · 更新记录</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-text" style="font-size:18px">鉴黄师下载官网</div>
+      <p class="footer-desc">面向内容安全从业者的工具与资料导航，覆盖图像分级、直播审核、样本标注、规则文档与误判复盘。</p>
+    </div>
+    <div class="footer-col">
+      <h4>工具与样本</h4>
+      <a href="/#picks">图像分级工具</a>
+      <a href="/#picks">短视频样本集</a>
+      <a href="/#picks">AI 生成图样本组</a>
+      <a href="/#picks">流水线配置面板</a>
+    </div>
+    <div class="footer-col">
+      <h4>规则与文档</h4>
+      <a href="/#deep">直播违规判定规则包</a>
+      <a href="/#deep">内容安全评分标准</a>
+      <a href="/#deep">误判案例档案</a>
+      <a href="/#deep">判定维度对照</a>
+    </div>
+    <div class="footer-col">
+      <h4>学习与动态</h4>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#timeline">条目时间线</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 鉴黄师下载官网 · 内容安全资源导航</span>
+    <span>部分内容为示例数据，仅用于展示页面结构</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('globalSearch');
+  var btn = document.getElementById('searchBtn');
+  var empty = document.getElementById('searchEmpty');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#picks .item-card'));
+  var feed = Array.prototype.slice.call(document.querySelectorAll('#feed .feed-list li'));
+
+  function run(){
+    var q = (input.value || '').trim().toLowerCase();
+    var hit = 0;
+    cards.forEach(function(c){
+      var text = c.textContent.toLowerCase();
+      var show = !q || text.indexOf(q) !== -1;
+      c.style.display = show ? '' : 'none';
+      if(show) hit++;
+    });
+    feed.forEach(function(li){
+      var text = li.textContent.toLowerCase();
+      li.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
+    });
+    if(q && hit === 0){
+      empty.classList.add('show');
+    }else{
+      empty.classList.remove('show');
+    }
+  }
+
+  btn.addEventListener('click', run);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); run(); }
+  });
+  input.addEventListener('input', function(){
+    if(!input.value){ run(); }
+  });
+})();
+</script>
+</body>
+                                                                                          </html>
