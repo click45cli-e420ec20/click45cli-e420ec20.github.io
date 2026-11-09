@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>r星每日大赛在线观看 - 赛事回放与赛程速览</title>
+<meta name="description" content="r星每日大赛在线观看聚合每日竞速、对决与挑战赛程，提供赛事回放入口、规则解析、选手榜单和观赛顺序建议，适合每天追赛与想入门的新观众。">
+<meta name="keywords" content="每日竞速赛程, 大赛回放, 挑战赛规则, 选手积分榜, 观赛指南">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121826'/%3E%3Cpath d='M14 40l10-18 8 12 6-9 12 15z' fill='%23f5b93c'/%3E%3Ccircle cx='46' cy='20' r='6' fill='%23e2574c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0e131d;
+  --bg-soft:#141b28;
+  --panel:#182131;
+  --panel-2:#1e293c;
+  --line:#2a374d;
+  --line-soft:#233046;
+  --text:#e8edf6;
+  --text-2:#a9b6cb;
+  --text-3:#7d8ca4;
+  --gold:#f5b93c;
+  --gold-soft:#3a2f14;
+  --red:#e2574c;
+  --teal:#4bbfa8;
+  --blue:#5b8def;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --sticky-h:112px;
+  --maxw:1320px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--sticky-h) + 14px)}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--font);font-size:15px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 .85em}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font-family:inherit}
+
+/* ============ 吸顶区 ============ */
+.sticky-wrap{position:sticky;top:0;z-index:60}
+.notice-bar{
+  background:linear-gradient(90deg,#2a2010,#3a2c12 55%,#2a2010);
+  border-bottom:1px solid #4a3a17;
+  font-size:13px;color:#f2d79b;
+}
+.notice-inner{
+  max-width:var(--maxw);margin:0 auto;padding:7px 20px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.notice-tag{
+  background:var(--gold);color:#20180a;font-weight:700;
+  font-size:11px;padding:1px 8px;border-radius:999px;letter-spacing:.5px;
+}
+.notice-inner .sep{color:#6d5828}
+.notice-inner a{color:#ffe6a8;border-bottom:1px dotted #8a6c2a}
+.notice-inner a:hover{color:#fff}
+
+.site-header{
+  background:rgba(16,22,33,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:var(--maxw);margin:0 auto;padding:10px 20px;
+  display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand-mark{width:38px;height:38px;flex-shrink:0}
+.brand-text{font-size:19px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.brand-text em{font-style:normal;color:var(--gold)}
+.header-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.header-nav a{
+  font-size:13.5px;color:var(--text-2);padding:6px 11px;border-radius:999px;
+  transition:.18s;white-space:nowrap;
+}
+.header-nav a:hover,.header-nav a:focus-visible{background:var(--panel-2);color:var(--gold);outline:none}
+.header-nav a:focus-visible{box-shadow:0 0 0 2px var(--gold)}
+.header-actions{display:flex;align-items:center;gap:8px}
+.mini-search{
+  display:flex;align-items:center;background:var(--panel);
+  border:1px solid var(--line);border-radius:999px;padding:4px 6px 4px 12px;
+}
+.mini-search input{
+  background:none;border:0;color:var(--text);font-size:13px;width:150px;outline:none;
+}
+.mini-search input::placeholder{color:var(--text-3)}
+.mini-search button{
+  background:var(--gold);color:#20180a;border:0;border-radius:999px;
+  padding:4px 12px;font-size:12.5px;font-weight:700;cursor:pointer;
+}
+.mini-search button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* ============ 首屏 ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 380px at 82% -10%, rgba(245,185,60,.16), transparent 65%),
+    radial-gradient(700px 340px at 8% 110%, rgba(91,141,239,.14), transparent 65%),
+    linear-gradient(180deg,#111827,#0e131d);
+  border-bottom:1px solid var(--line-soft);
+}
+.hero-grid{
+  max-width:var(--maxw);margin:0 auto;padding:44px 20px 48px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1px;color:var(--gold);
+  background:rgba(245,185,60,.1);border:1px solid rgba(245,185,60,.28);
+  padding:4px 12px;border-radius:999px;margin-bottom:16px;
+}
+.hero-kicker i{width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(27px,3.6vw,42px);letter-spacing:-.5px;margin-bottom:14px}
+.hero h1 span{color:var(--gold)}
+.hero-desc{color:var(--text-2);font-size:15px;max-width:560px;margin-bottom:22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:999px;font-size:14px;font-weight:700;
+  border:1px solid transparent;transition:.18s;
+}
+.btn-primary{background:var(--gold);color:#20180a}
+.btn-primary:hover{background:#ffcd5c}
+.btn-ghost{background:rgba(255,255,255,.03);border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap}
+.hero-stats div{min-width:78px}
+.hero-stats b{display:block;font-size:21px;color:var(--gold);line-height:1.2}
+.hero-stats small{font-size:12px;color:var(--text-3)}
+
+/* 首屏视觉：赛程面板 */
+.hero-visual{position:relative}
+.scoreboard{
+  background:linear-gradient(160deg,#1b2436,#141b28);
+  border:1px solid var(--line);border-radius:18px;padding:16px;
+  box-shadow:var(--shadow);
+}
+.sb-head{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--text-3);border-bottom:1px solid var(--line-soft);
+  padding-bottom:10px;margin-bottom:12px;letter-spacing:.5px;
+}
+.sb-head .live{color:var(--red);font-weight:700;display:flex;align-items:center;gap:5px}
+.sb-head .live i{width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block}
+.sb-row{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.05);font-size:13.5px;
+}
+.sb-row:last-child{border-bottom:0}
+.sb-rank{font-size:12px;color:var(--text-3);font-weight:700}
+.sb-row:nth-child(2) .sb-rank{color:var(--gold)}
+.sb-name{color:var(--text)}
+.sb-name small{display:block;font-size:11.5px;color:var(--text-3)}
+.sb-score{font-weight:700;color:var(--teal);font-size:13px}
+.sb-bar{
+  grid-column:2 / 4;height:4px;border-radius:3px;background:rgba(255,255,255,.06);
+  overflow:hidden;margin-top:-4px;
+}
+.sb-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--red));border-radius:3px}
+.sb-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--text-3);margin-top:12px;padding-top:10px;border-top:1px solid var(--line-soft)}
+
+/* ============ 主布局：三栏门户 ============ */
+.layout{
+  max-width:var(--maxw);margin:0 auto;padding:30px 20px 60px;
+  display:grid;grid-template-columns:172px minmax(0,1fr) 268px;gap:26px;align-items:start;
+}
+.channel-col{position:sticky;top:calc(var(--sticky-h) + 16px)}
+.panel{
+  background:var(--panel);border:1px solid var(--line-soft);
+  border-radius:var(--radius);padding:16px;
+}
+.panel + .panel{margin-top:18px}
+.panel-title{
+  font-size:12.5px;letter-spacing:1.5px;color:var(--text-3);
+  text-transform:uppercase;margin-bottom:12px;font-weight:700;
+}
+.chan-list a{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13.5px;color:var(--text-2);padding:7px 9px;border-radius:8px;
+  transition:.15s;
+}
+.chan-list a:hover,.chan-list a:focus-visible{background:var(--panel-2);color:var(--gold);outline:none}
+.chan-list a em{font-style:normal;font-size:11px;color:var(--text-3)}
+.chan-list a:hover em{color:var(--gold)}
+.quick-links{display:flex;flex-wrap:wrap;gap:6px}
+.quick-links a{
+  font-size:12px;color:var(--text-2);background:var(--panel-2);
+  border:1px solid var(--line-soft);padding:4px 9px;border-radius:6px;
+}
+.quick-links a:hover{color:var(--gold);border-color:var(--gold)}
+
+.main-col{min-width:0}
+.aside-col{position:sticky;top:calc(var(--sticky-h) + 16px)}
+
+/* ============ 通用板块 ============ */
+.section{margin-bottom:34px}
+.sec-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
+  margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--line-soft);
+}
+.sec-head h2{font-size:20px;letter-spacing:-.2px}
+.sec-head h2 small{font-size:12px;color:var(--text-3);font-weight:400;margin-left:8px;letter-spacing:0}
+.sec-head .more{font-size:12.5px;color:var(--text-3);white-space:nowrap}
+.sec-head .more:hover{color:var(--gold)}
+.lead{font-size:14.5px;color:var(--text-2);margin-bottom:14px}
+
+/* 概览 */
+.overview{background:linear-gradient(150deg,#1a2333,#151c29);border:1px solid var(--line-soft);border-radius:var(--radius);padding:22px 24px}
+.overview p{font-size:14.5px;color:var(--text-2);margin-bottom:.7em}
+.overview p:last-child{margin-bottom:0}
+.overview strong{color:var(--gold);font-weight:700}
+
+/* 卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.2s;
+}
+.card:hover{border-color:#3d4f6b;transform:translateY(-2px)}
+.card-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0b1018}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-badge{
+  position:absolute;top:8px;left:8px;background:rgba(14,19,29,.82);
+  color:var(--gold);font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;
+  backdrop-filter:blur(4px);
+}
+.card-body{padding:12px 13px 14px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:14.5px;margin-bottom:6px;line-height:1.45}
+.card-body h3 a:hover{color:var(--gold)}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.tag{
+  font-size:11px;color:var(--text-2);background:var(--panel-2);
+  padding:1px 7px;border-radius:4px;border:1px solid var(--line-soft);
+}
+.tag.hot{color:var(--red);border-color:rgba(226,87,76,.4);background:rgba(226,87,76,.1)}
+.card-desc{font-size:12.5px;color:var(--text-3);line-height:1.65;margin-bottom:10px;flex:1}
+.card-meta{display:flex;justify-content:space-between;font-size:11.5px;color:var(--text-3);border-top:1px solid var(--line-soft);padding-top:8px}
+.card-meta b{color:var(--teal);font-weight:700}
+
+/* 动态列表 */
+.feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
+.feed-item{
+  display:flex;gap:11px;padding:10px 12px;background:var(--panel);
+  border:1px solid var(--line-soft);border-radius:10px;align-items:flex-start;
+}
+.feed-time{font-size:11px;color:var(--gold);white-space:nowrap;font-weight:700;padding-top:2px;min-width:46px}
+.feed-body{min-width:0}
+.feed-body h4{font-size:13.5px;margin-bottom:2px}
+.feed-body h4 a:hover{color:var(--gold)}
+.feed-body p{font-size:12px;color:var(--text-3);margin:0;line-height:1.6}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;
+  padding:13px 14px;transition:.18s;
+}
+.cat-item:hover{border-color:var(--gold);background:var(--panel-2)}
+.cat-item b{display:block;font-size:14px;margin-bottom:3px}
+.cat-item span{font-size:11.5px;color:var(--text-3)}
+
+/* 深度解析 */
+.article{
+  background:var(--panel);border:1px solid var(--line-soft);
+  border-radius:var(--radius);padding:26px 28px;
+}
+.article h3{font-size:16.5px;margin:22px 0 10px;color:var(--gold);padding-left:11px;border-left:3px solid var(--gold)}
+.article h3:first-of-type{margin-top:4px}
+.article p{font-size:14px;color:var(--text-2);line-height:1.85}
+.article ul{font-size:14px;color:var(--text-2);padding-left:0;margin-bottom:12px}
+.article ul li{position:relative;padding-left:19px;margin-bottom:7px;line-height:1.8}
+.article ul li::before{content:"";position:absolute;left:4px;top:11px;width:6px;height:6px;border-radius:2px;background:var(--gold);opacity:.75}
+.article ul li b{color:var(--text)}
+
+/* 观赛路径 步骤 */
+.steps{display:grid;gap:12px}
+.step{
+  display:grid;grid-template-columns:38px 1fr;gap:14px;
+  background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;padding:14px 16px;
+}
+.step-num{
+  width:34px;height:34px;border-radius:9px;background:var(--gold-soft);
+  color:var(--gold);font-weight:800;display:flex;align-items:center;justify-content:center;
+  font-size:14px;border:1px solid rgba(245,185,60,.3);
+}
+.step h4{font-size:14.5px;margin-bottom:4px}
+.step p{font-size:13px;color:var(--text-2);margin:0;line-height:1.7}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.compare-box{background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;padding:16px 18px}
+.compare-box h4{font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.compare-box h4 i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.compare-box ul li{font-size:13px;color:var(--text-2);padding:5px 0 5px 16px;position:relative;line-height:1.7}
+.compare-box ul li::before{content:"·";position:absolute;left:4px;color:var(--gold);font-weight:800}
+
+/* FAQ */
+.faq-item{background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;margin-bottom:9px;overflow:hidden}
+.faq-item summary{
+  cursor:pointer;padding:13px 16px;font-size:14px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;list-style:none;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:18px;font-weight:400;flex-shrink:0;transition:.2s}
+.faq-item[open] summary::after{content:"−"}
+.faq-item summary:hover{background:var(--panel-2)}
+.faq-item summary:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.faq-body{padding:0 16px 14px;font-size:13.5px;color:var(--text-2);line-height:1.8}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.comment{
+  background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;padding:12px 14px;
+}
+.c-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.avatar{
+  width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;font-weight:800;color:#0e131d;flex-shrink:0;
+}
+.c-name{font-size:12.5px;font-weight:700}
+.c-time{font-size:11px;color:var(--text-3);margin-left:auto}
+.comment p{font-size:12.5px;color:var(--text-2);margin:0;line-height:1.7}
+.c-target{font-size:11px;color:var(--gold);margin-bottom:4px}
+
+/* 资讯 */
+.news-item{
+  display:grid;grid-template-columns:112px 1fr;gap:14px;
+  background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;
+  padding:12px;margin-bottom:10px;align-items:center;
+}
+.news-item img{width:112px;height:74px;object-fit:cover;border-radius:7px}
+.news-item h4{font-size:14px;margin-bottom:4px}
+.news-item h4 a:hover{color:var(--gold)}
+.news-item p{font-size:12.5px;color:var(--text-3);margin:0;line-height:1.65}
+.news-date{font-size:11px;color:var(--text-3);margin-top:5px;display:block}
+
+/* 相关推荐 标签索引 */
+.reco-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.reco-cloud a{
+  font-size:13px;color:var(--text-2);background:var(--panel);
+  border:1px solid var(--line-soft);padding:6px 13px;border-radius:999px;transition:.16s;
+}
+.reco-cloud a:hover{color:var(--gold);border-color:var(--gold);background:var(--panel-2)}
+.reco-cloud a b{color:var(--text-3);font-weight:400;font-size:11.5px;margin-left:4px}
+
+/* 榜单 */
+.rank-table{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden}
+.rank-row{
+  display:grid;grid-template-columns:40px 1fr 92px 76px;gap:10px;align-items:center;
+  padding:11px 16px;border-bottom:1px solid var(--line-soft);font-size:13.5px;
+}
+.rank-row:last-child{border-bottom:0}
+.rank-row.head{background:var(--panel-2);font-size:11.5px;color:var(--text-3);letter-spacing:.5px;font-weight:700}
+.rank-row:not(.head):hover{background:rgba(255,255,255,.02)}
+.rk{font-weight:800;color:var(--text-3);font-size:13px}
+.rank-row:nth-child(2) .rk{color:var(--gold)}
+.rank-row:nth-child(3) .rk{color:#c9d3e3}
+.rank-row:nth-child(4) .rk{color:#b08a5a}
+.rname small{display:block;font-size:11px;color:var(--text-3)}
+.rscore{color:var(--teal);font-weight:700;text-align:right}
+.rtrend{text-align:right;font-size:11.5px;color:var(--text-3)}
+.rtrend.up{color:#4bbfa8}
+.rtrend.down{color:var(--red)}
+
+/* 侧栏 */
+.hot-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line-soft);font-size:13px;align-items:flex-start}
+.hot-list li:last-child{border-bottom:0}
+.hot-list .num{
+  width:19px;height:19px;border-radius:5px;background:var(--panel-2);
+  font-size:11px;font-weight:800;color:var(--text-3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+}
+.hot-list li:nth-child(1) .num,.hot-list li:nth-child(2) .num,.hot-list li:nth-child(3) .num{background:var(--gold-soft);color:var(--gold)}
+.hot-list a:hover{color:var(--gold)}
+.hot-list small{display:block;font-size:11px;color:var(--text-3);margin-top:1px}
+
+.side-box{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:16px}
+.side-box + .side-box{margin-top:18px}
+.side-title{font-size:13px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:7px;letter-spacing:.5px}
+.side-title::before{content:"";width:3px;height:13px;background:var(--gold);border-radius:2px}
+.sched{font-size:12.5px}
+.sched li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line-soft);color:var(--text-2)}
+.sched li:last-child{border-bottom:0}
+.sched li span:first-child{color:var(--text);font-weight:600}
+.sched li span:last-child{color:var(--text-3);font-size:11.5px;white-space:nowrap}
+.sched li.now span:last-child{color:var(--red);font-weight:700}
+
+/* 搜索结果反馈 */
+.search-feedback{
+  display:none;background:var(--panel-2);border:1px solid var(--line);
+  border-radius:9px;padding:10px 14px;font-size:13px;color:var(--text-2);margin-bottom:14px;
+}
+.search-feedback.show{display:block}
+.search-feedback b{color:var(--gold)}
+.hidden-item{display:none !important}
+
+/* ============ 页尾 ============ */
+.site-footer{background:#0a0f17;border-top:1px solid var(--line-soft);margin-top:20px}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:38px 20px 22px}
+.footer-top{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px;margin-bottom:28px}
+.footer-brand .brand{margin-bottom:10px}
+.footer-brand p{font-size:12.5px;color:var(--text-3);line-height:1.8;max-width:300px}
+.footer-col h4{font-size:12.5px;color:var(--text);margin-bottom:10px;letter-spacing:.5px}
+.footer-col a{display:block;font-size:12.5px;color:var(--text-3);padding:3px 0}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{
+  border-top:1px solid var(--line-soft);padding-top:16px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:11.5px;color:var(--text-3);
+}
+
+/* ============ 响应式 ============ */
+@media (max-width:1120px){
+  .layout{grid-template-columns:158px minmax(0,1fr) 240px;gap:20px}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:1024px){
+  :root{--sticky-h:104px}
+  .layout{grid-template-columns:minmax(0,1fr) 250px}
+  .channel-col{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-visual{max-width:480px}
+  .header-nav{order:3;flex-basis:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  .header-nav a{font-size:12.5px;padding:5px 9px}
+}
+@media (max-width:820px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .aside-col{position:static}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .feed{grid-template-columns:1fr}
+  .comment-grid{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:22px}
+}
+@media (max-width:740px){
+  :root{--sticky-h:126px}
+  .header-inner{padding:9px 14px;gap:12px}
+  .brand-text{font-size:16.5px}
+  .mini-search input{width:96px}
+  .layout{padding:22px 14px 46px}
+  .hero-grid{padding:30px 14px 34px}
+  .hero-actions .btn{padding:9px 16px;font-size:13px}
+  .card-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .article{padding:20px 18px}
+  .sec-head h2{font-size:17.5px}
+  .sec-head h2 small{display:block;margin-left:0;margin-top:2px}
+  .news-item{grid-template-columns:1fr}
+  .news-item img{width:100%;height:130px}
+  .rank-row{grid-template-columns:30px 1fr 64px;font-size:12.5px}
+  .rank-row .rtrend{display:none}
+  .footer-top{grid-template-columns:1fr}
+  .notice-inner{font-size:12px;padding:6px 14px}
+  .sb-row{grid-template-columns:22px 1fr auto;font-size:12.5px}
+}
+@media (max-width:400px){
+  .cat-grid{grid-template-columns:1fr}
+  .hero-stats{gap:16px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== 吸顶区：公告条 + 页头 ===== -->
+<div class="sticky-wrap">
+  <div class="notice-bar" id="notice">
+    <div class="notice-inner">
+      <span class="notice-tag">今日更新</span>
+      <span>11 月 8 日赛程已上线，共 9 场对决回放</span>
+      <span class="sep">|</span>
+      <span>新增「极速环城竞速」规则页与选手积分榜</span>
+      <span class="sep">|</span>
+      <a href="#latest">查看今日动态</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1b2436" stroke="#2a374d"/>
+          <path d="M12 42l11-20 9 13 6-9 14 16z" fill="#f5b93c"/>
+          <circle cx="47" cy="19" r="6" fill="#e2574c"/>
+          <path d="M12 50h40" stroke="#4bbfa8" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">r星每日大赛在线观看</span>
+      </a>
+      <nav class="header-nav" aria-label="主题导航">
+        <a href="#overview">赛事概览</a>
+        <a href="#featured">今日赛程</a>
+        <a href="#latest">最新动态</a>
+        <a href="#channels">赛事分类</a>
+        <a href="#guide">观赛指南</a>
+        <a href="#faq">常见问题</a>
+        <a href="#rank">选手榜</a>
+      </nav>
+      <div class="header-actions">
+        <form class="mini-search" role="search" id="searchForm">
+          <input type="search" id="searchInput" placeholder="搜赛程 / 选手 / 赛事" aria-label="站内内容搜索">
+          <button type="submit">搜索</button>
+        </form>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- ===== 首屏 ===== -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <span class="hero-kicker"><i></i>2026 秋季赛段 · 每日更新</span>
+      <h1><span>r星每日大赛在线观看</span></h1>
+      <p class="hero-desc">
+        这里按日汇总竞速赛、双人对决、限时挑战赛三类赛事：每场对决的赛程时间、回放入口、规则细则、选手积分变化都整理在同一条目里，适合每天追赛的老观众，也方便第一次点进直播的观众快速弄清在比什么。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#featured">查看 11 月 8 日赛程</a>
+        <a class="btn btn-ghost" href="#guide">新观众观赛顺序</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>9</b><small>今日对决</small></div>
+        <div><b>38</b><small>本周回放</small></div>
+        <div><b>126</b><small>在册选手</small></div>
+        <div><b>3</b><small>赛事类型</small></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="scoreboard">
+        <div class="sb-head">
+          <span>环城竞速 · 第 7 轮</span>
+          <span class="live"><i></i>进行中</span>
+        </div>
+        <div class="sb-row">
+          <span class="sb-rank">1</span>
+          <span class="sb-name">夜航线 <small>选手 阿岚</small></span>
+          <span class="sb-score">2:41.08</span>
+          <span class="sb-bar"><span style="width:96%"></span></span>
+        </div>
+        <div class="sb-row">
+          <span class="sb-rank">2</span>
+          <span class="sb-name">北港隧道 <small>选手 陆迟</small></span>
+          <span class="sb-score">2:42.55</span>
+          <span class="sb-bar"><span style="width:88%"></span></span>
+        </div>
+        <div class="sb-row">
+          <span class="sb-rank">3</span>
+          <span class="sb-name">旧城高架 <small>选手 小满</small></span>
+          <span class="sb-score">2:43.10</span>
+          <span class="sb-bar"><span style="width:81%"></span></span>
+        </div>
+        <div class="sb-row">
+          <span class="sb-rank">4</span>
+          <span class="sb-name">环湖公路 <small>选手 唐野</small></span>
+          <span class="sb-score">2:44.92</span>
+          <span class="sb-bar"><span style="width:74%"></span></span>
+        </div>
+        <div class="sb-foot">
+          <span>赛道：夜航线 / 北港隧道</span>
+          <span>剩余 2 场</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 主布局：三栏门户 ===== -->
+<div class="layout">
+
+  <!-- 左：频道索引 -->
+  <aside class="channel-col" aria-label="频道索引">
+    <div class="panel">
+      <div class="panel-title">赛事频道</div>
+      <nav class="chan-list">
+        <a href="#channels">环城竞速 <em>每日</em></a>
+        <a href="#channels">越野拉力 <em>周二</em></a>
+        <a href="#channels">双人对决 <em>每日</em></a>
+        <a href="#channels">限时挑战 <em>周末</em></a>
+        <a href="#channels">团队接力 <em>周五</em></a>
+        <a href="#channels">道具赛 <em>周三</em></a>
+        <a href="#channels">新手练习赛 <em>常开</em></a>
+        <a href="#channels">表演赛 <em>不定期</em></a>
+      </nav>
+    </div>
+    <div class="panel">
+      <div class="panel-title">快捷入口</div>
+      <div class="quick-links">
+        <a href="#rank">选手积分榜</a>
+        <a href="#latest">今日赛果</a>
+        <a href="#rules">规则细则</a>
+        <a href="#faq">新人问答</a>
+        <a href="#news">赛事资讯</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 中：主内容 -->
+  <main class="main-col">
+
+    <!-- 1. 主题领域概览 -->
+    <section class="section" id="overview">
+      <div class="sec-head">
+        <h2>赛事概览 <small>竞速、对决与挑战赛三线并行</small></h2>
+      </div>
+      <div class="overview">
+        <p>
+          所谓「每日大赛」，指的是同一赛段内每个比赛日固定开打的系列赛。目前主流分三条线：<strong>环城竞速</strong>以固定赛道计时为主，单场 5 到 8 分钟，每天两到三轮；<strong>双人对决</strong>是两名选手在同一地图正面对抗，胜负看名次而非绝对时间；<strong>限时挑战赛</strong>只在周末开放，赛道与规则每期更换，成绩保留在当周榜单上。
+        </p>
+        <p>
+          三条线的观看重点并不相同。竞速赛看的是路线选择与弯道处理，差距常在 0.5 秒以内；对决看的是对抗节奏和失误惩罚，被撞出赛道一次基本就丢掉一局；限时挑战看的是新规则下的打法试错，往往第一天没人能跑进目标时间。想连着追，建议以竞速赛为主轴，对决和挑战赛作为穿插。
+        </p>
+        <p>
+          选手方面，积分按场次累计：竞速赛第一名 100 分、第二名 75 分，对决胜方 60 分，挑战赛完成目标额外加 30 分。赛季末按总积分排出前 16 名进入总决赛。当前赛段已进行到第 7 轮，领跑的是选手阿岚，累计 640 分。
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="sec-head">
+        <h2>今日精选对决 <small>11 月 8 日可看场次</small></h2>
+        <a class="more" href="#latest">全部动态 →</a>
+      </div>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/rstar-nightline31/400/300" width="400" height="300" loading="lazy" alt="夜航线环城竞速赛道夜景">
+            <span class="card-badge">回放已上线</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="#featured">夜航线环城竞速第 7 轮</a></h3>
+            <div class="card-tags"><span class="tag hot">热门</span><span class="tag">环城竞速</span><span class="tag">计时赛</span></div>
+            <p class="card-desc">阿岚与陆迟在第三圈北港隧道口并线，两次换位只差 0.3 秒，是本轮最值得看的一段攻防。适合想看弯道超车细节的观众。</p>
+            <div class="card-meta"><span>时长 14:20</span><b>热度 9.6</b></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/rstar-duel18/400/300" width="400" height="300" loading="lazy" alt="双人对决旧城高架地图俯视">
+            <span class="card-badge">今晚 20:00</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="#featured">双人对决：旧城高架八强战</a></h3>
+            <div class="card-tags"><span class="tag">双人对决</span><span class="tag">八强</span><span class="tag">直播</span></div>
+            <p class="card-desc">八名选手两两对阵，三局两胜。地图固定为旧城高架，窄道多、无护墙，被撞出赛道即判负，是失误率最高的一轮。</p>
+            <div class="card-meta"><span>20:00 开赛</span><b>热度 9.2</b></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/rstar-challenge07/400/300" width="400" height="300" loading="lazy" alt="限时挑战赛环湖公路赛道">
+            <span class="card-badge">周末限定</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="#featured">限时挑战：环湖公路 3 分 10 秒内完赛</a></h3>
+            <div class="card-tags"><span class="tag">限时挑战</span><span class="tag">新规则</span><span class="tag">周末</span></div>
+            <p class="card-desc">本期目标时间 3:10，禁用氮气加速，只能靠走线与刹车点。开赛首日无人达标，第二天才有选手跑进 3:08。</p>
+            <div class="card-meta"><span>周六 19:00 开赛</span><b>达标 4 人</b></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/rstar-relay22/400/300" width="400" height="300" loading="lazy" alt="团队接力赛交接区画面">
+            <span class="card-badge">周五场</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="#featured">团队接力赛：四人一组换棒制</a></h3>
+            <div class="card-tags"><span class="tag">团队接力</span><span class="tag">协作</span><span class="tag">四人组</span></div>
+            <p class="card-desc">每队四人各跑一段，交接区停留超过 2 秒判罚 5 秒。上周冠军队伍靠最后一棒换线抢到 1.4 秒优势。</p>
+            <div class="card-meta"><span>周五 21:00</span><b>热度 8.7</b></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/rstar-item45/400/300" width="400" height="300" loading="lazy" alt="道具赛北港隧道道具箱位置">
+            <span class="card-badge">回放已上线</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="#featured">道具赛：北港隧道道具分布改动</a></h3>
+            <div class="card-tags"><span class="tag">道具赛</span><span class="tag">规则调整</span><span class="tag">周三</span></div>
+            <p class="card-desc">本周起隧道内道具箱由 3 个减为 2 个，减速带使用率明显上升。看点是选手如何用一张减速带守住最后一段直道。</p>
+            <div class="card-meta"><span>时长 11:05</span><b>热度 8.4</b></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/rstar-rookie09/400/300" width="400" height="300" loading="lazy" alt="新手练习赛起步区画面">
+            <span class="card-badge">常开</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="#featured">新手练习赛：环城基础赛道入门场</a></h3>
+            <div class="card-tags"><span class="tag">新手练习</span><span class="tag">入门</span><span class="tag">无排名</span></div>
+            <p class="card-desc">不记积分、不设淘汰，全程开放。适合第一次看比赛的人先熟悉赛道结构和常见术语，看完再去看正式赛不会一头雾水。</p>
+            <div class="card-meta"><span>全天开放</span><b>在线 46 人</b></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3. 最新更新 / 动态 -->
+    <section class="section" id="latest">
+      <div class="sec-head">
+        <h2>最新赛果与动态 <small>11 月 6 日至 11 月 8 日</small></h2>
+      </div>
+      <div class="search-feedback" id="latestFeedback" role="status" aria-live="polite"></div>
+      <div class="feed" id="latestFeed">
+        <div class="feed-item">
+          <span class="feed-time">今天 09:30</span>
+          <div class="feed-body"><h4><a href="#latest">环城竞速第 7 轮赛果公布</a></h4><p>阿岚以 2:41.08 拿下第一，陆迟落后 1.47 秒列第二，本轮共 9 人完赛。</p></div>
+        </div>
+        <div class="feed-item">
+          <span class="feed-time">今天 08:15</span>
+          <div class="feed-body"><h4><a href="#latest">今日双人对决对阵表已出</a></h4><p>八强战分四场，20:00 起依次开打，首场为陆迟对唐野。</p></div>
+        </div>
+        <div class="feed-item">
+          <span class="feed-time">昨天 21:10</span>
+          <div class="feed-body"><h4><a href="#latest">限时挑战赛首日无人达标</a></h4><p>环湖公路目标 3:10，最快成绩 3:12.64，官方确认目标时间暂不调整。</p></div>
+        </div>
+        <div class="feed-item">
+          <span class="feed-time">昨天 18:40</span>
+          <div class="feed-body"><h4><a href="#latest">道具赛规则修订生效</a></h4><p>北港隧道道具箱减少一个，减速带冷却由 8 秒缩短为 6 秒。</p></div>
+        </div>
+        <div class="feed-item">
+          <span class="feed-time">昨天 15:20</span>
+          <div class="feed-body"><h4><a href="#latest">选手小满积分升至第三</a></h4><p>凭借本周两场竞速赛的稳定名次，总分来到 512 分，超过唐野。</p></div>
+        </div>
+        <div class="feed-item">
+          <span class="feed-time">11 月 6 日 22:05</span>
+          <div class="feed-body"><h4><a href="#latest">团队接力赛报名截止</a></h4><p>本期共 14 支队伍报名，比上期多 3 支，本周五 21:00 开赛。</p></div>
+        </div>
+        <div class="feed-item">
+          <span class="feed-time">11 月 6 日 19:30</span>
+          <div class="feed-body"><h4><a href="#latest">越野拉力赛道图更新</a></h4><p>新增两段泥地，抓地力下降明显，已在规则页补充说明。</p></div>
+        </div>
+        <div class="feed-item">
+          <span class="feed-time">11 月 6 日 14:00</span>
+          <div class="feed-body"><h4><a href="#latest">秋季赛段第 7 轮回放归档</a></h4><p>全部 9 场对决回放已上传，可在对应条目内直接调取。</p></div>
+        </div>
+        <div class="feed-item">
+          <span class="feed-time">11 月 6 日 10:45</span>
+          <div class="feed-body"><h4><a href="#latest">新手练习赛加入语音提示</a></h4><p>弯道前 3 秒提示刹车点，帮助新观众理解选手为何在此减速。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="channels">
+      <div class="sec-head">
+        <h2>赛事分类入口 <small>按类型、节奏与门槛划分</small></h2>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="#channels"><b>环城竞速</b><span>每日两至三轮 · 计时定胜负</span></a>
+        <a class="cat-item" href="#channels"><b>越野拉力</b><span>每周二 · 复杂地形</span></a>
+        <a class="cat-item" href="#channels"><b>双人对决</b><span>每日 · 一对三局两胜</span></a>
+        <a class="cat-item" href="#channels"><b>限时挑战</b><span>周末限定 · 目标时间制</span></a>
+        <a class="cat-item" href="#channels"><b>团队接力</b><span>每周五 · 四人协作</span></a>
+        <a class="cat-item" href="#channels"><b>道具赛</b><span>每周三 · 道具干扰</span></a>
+        <a class="cat-item" href="#channels"><b>新手练习赛</b><span>常开 · 不记积分</span></a>
+        <a class="cat-item" href="#channels"><b>表演赛</b><span>不定期 · 特邀选手</span></a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析正文 -->
+    <section class="section" id="rules">
+      <div class="sec-head">
+        <h2>赛事规则与判罚解析 <small>看懂一场比赛的六个维度</small></h2>
+      </div>
+      <div class="article">
+
+        <h3>计时赛与名次赛，成绩怎么才算数</h3>
+        <p>
+          环城竞速属于计时赛，最终成绩取单圈最快时间，而非完成全部圈数的累计时间。这意味着选手在第二圈跑出个人最快后，第三圈可以保守处理，不必强行压线。越野拉力则相反，成绩按三圈累计计算，任何一圈失误都会拖累总分，所以常见选手在前两圈控制节奏、最后一圈才提速。
+        </p>
+        <p>
+          双人对决不看绝对时间，只看谁先过线。三局两胜制下，前两局各换一张地图，第三局回到首局地图。这种设计让地图熟悉度成为关键变量，选手通常会在第一局试探对手的走线习惯，再在第三局针对性压制。
+        </p>
+
+        <h3>弯道判罚与出界认定</h3>
+        <p>
+          赛道边界以路面白线为准，四轮全部越过白线即判出界，需在 3 秒内回到赛道，否则加罚 2 秒。窄道地图（如旧城高架）没有护墙，出界等同于直接掉速，所以选手普遍在弯前提前 10 到 15 米减速。
+        </p>
+        <ul>
+          <li><b>切线判罚：</b>连续两次切内线抢占位置，第二次加罚 1 秒。</li>
+          <li><b>碰撞责任：</b>后车追尾前车，若前车未变线，责任归后车，加罚 3 秒。</li>
+          <li><b>交接区停留：</b>团队接力中交接超过 2 秒，按每超 1 秒加罚 2 秒累计。</li>
+        </ul>
+
+        <h3>积分体系与赛季排名</h3>
+        <p>
+          积分按场次发放，竞速赛前八名依次为 100、75、60、45、35、25、15、10 分；双人对决胜方 60 分、负方 20 分；限时挑战赛只要在目标时间内完赛即得 30 分，前五名额外加 15 分。团队接力按队伍名次发放，队内四人平分。
+        </p>
+        <p>
+          赛季末取总积分前 16 名进入总决赛。若积分相同，先比较冠军场次数，再比较平均完赛时间。目前领跑者阿岚 640 分，领先第二名陆迟 88 分，差距主要来自竞速赛的稳定前三。
+        </p>
+
+        <h3>道具赛的额外变量</h3>
+        <p>
+          道具赛每周三开赛，地图上随机刷新加速、减速带、烟雾三类道具。本周起北港隧道的道具箱由 3 个减为 2 个，减速带冷却从 8 秒缩短到 6 秒，意味着同一段路可能连续吃到两次减速。观看时留意选手是否在道具箱前主动让位，这通常是为下一段直道保留加速。
+        </p>
+
+        <h3>回放怎么看效率最高</h3>
+        <p>
+          一场完整回放约 12 到 15 分钟，若只想看关键攻防，可以直接跳到最后一圈的前 90 秒，绝大多数换位发生在这个区间。想看规则判罚是否合理，则重点看第 2 圈中段，那里是出界与碰撞最集中的位置。
+        </p>
+        <p>
+          限时挑战赛的回放更适合按选手视角分段看：同一段赛道不同选手的刹车点差异，往往就是达标与超时的分界。
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. 体验指南 / 消费路径 -->
+    <section class="section" id="guide">
+      <div class="sec-head">
+        <h2>观赛路径建议 <small>从入门到按类型追赛</small></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h4>先看一场新手练习赛</h4>
+            <p>练习赛节奏慢、无排名压力，能让你先记住环城基础赛道的三个主要弯道和高架衔接段，后面看正式赛时不会因画面切换太快而跟不上。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h4>挑一场环城竞速正式赛</h4>
+            <p>竞速赛结构最清晰：起跑、两圈缠斗、最后一圈定胜负。看两到三场就能分辨选手的走线风格，是偏保守还是激进压线。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h4>再进入双人对决</h4>
+            <p>对决的对抗强度更高，失误惩罚也更重。建议先看有解说标注的场次，能更快理解碰撞责任判定和第三局地图回切的用意。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h4>最后尝试限时挑战与道具赛</h4>
+            <p>这两类规则每期变化，适合已经熟悉基础赛道的观众。挑战赛主要看新规则下的打法试错，道具赛则看选手如何用有限道具守住位置。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div>
+            <h4>建立自己的固定追赛节奏</h4>
+            <p>日常只看竞速赛与对决，周末补挑战赛回放，每周五看团队接力。按这个节奏，一周大约投入 3 到 4 小时就能跟上积分变化。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 对照面板 -->
+    <section class="section" id="compare">
+      <div class="sec-head">
+        <h2>赛事类型对照 <small>竞速赛与双人对决差异</small></h2>
+      </div>
+      <div class="compare">
+        <div class="compare-box">
+          <h4><i style="background:var(--gold)"></i>环城竞速</h4>
+          <ul>
+            <li>胜负依据：单圈最快时间</li>
+            <li>单场时长：5 至 8 分钟</li>
+            <li>参赛人数：每场 8 至 12 人</li>
+            <li>关键能力：走线与刹车点控制</li>
+            <li>失误代价：单圈作废，可重跑下一圈</li>
+            <li>适合观众：想看清路线选择与细节处理</li>
+          </ul>
+        </div>
+        <div class="compare-box">
+          <h4><i style="background:var(--red)"></i>双人对决</h4>
+          <ul>
+            <li>胜负依据：先过线者胜</li>
+            <li>单场时长：三局共 9 至 12 分钟</li>
+            <li>参赛人数：每场 2 人</li>
+            <li>关键能力：对抗节奏与位置压制</li>
+            <li>失误代价：被撞出赛道基本丢一局</li>
+            <li>适合观众：想看正面对抗与心理博弈</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <div class="sec-head">
+        <h2>常见问题 <small>新观众最常问的六件事</small></h2>
+      </div>
+
+      <details class="faq-item" open>
+        <summary>环城竞速一般每天几点开始，一天几轮？</summary>
+        <div class="faq-body">常规比赛日每天两轮，第一轮 19:30 开始，第二轮 21:00 开始，周末加开一轮 22:30 的表演赛。每轮约 9 到 12 名选手同场，单场 5 到 8 分钟，整轮含等待时间约 40 分钟。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>第一次看，应该从哪个赛事开始？</summary>
+        <div class="faq-body">建议先看新手练习赛的环城基础赛道，熟悉赛道结构，再挑一场环城竞速正式赛。竞速赛规则最简单，只有计时一个维度，不需要先理解对抗判罚。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>双人对决和环城竞速最大的区别是什么？</summary>
+        <div class="faq-body">竞速赛比的是绝对时间，跑得快就赢，与其他选手关系不大；双人对决比的是相对名次，必须把对手挡在身后。所以对决里常见故意减速卡位，而竞速赛里不会出现这种打法。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>限时挑战赛的目标时间是怎么定的？</summary>
+        <div class="faq-body">由赛事方在开赛前用标准配置跑出基准成绩，再上调 3% 到 5% 作为目标时间。本期环湖公路基准为 3:03，目标定为 3:10，禁用氮气加速是额外限制条件。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>选手积分相同怎么排名？</summary>
+        <div class="faq-body">先比冠军场次数，多者在前；仍相同则比平均完赛时间，时间短者在前；再相同则比最近一轮的名次。目前第三名小满与第四名唐野相差 12 分，暂不涉及同分判定。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>回放一般赛后多久上线？</summary>
+        <div class="faq-body">竞速赛与对决的回放在比赛结束后 30 分钟内上线，限时挑战赛因为要核对成绩，通常延后 1 到 2 小时。团队接力赛回放会在次日中午前补齐。</div>
+      </details>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <div class="sec-head">
+        <h2>观众评论 <small>关于具体场次与选手</small></h2>
+      </div>
+      <div class="comment-grid">
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#f5b93c">林</span><span class="c-name">林间赛道</span><span class="c-time">今天 10:12</span></div>
+          <div class="c-target">夜航线环城竞速第 7 轮</div>
+          <p>第三圈北港隧道那次并线真的精彩，两车贴到几乎没缝，阿岚出隧道后的换线判断太稳了。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#4bbfa8">老</span><span class="c-name">老周看比赛</span><span class="c-time">今天 09:48</span></div>
+          <div class="c-target">环城竞速整体</div>
+          <p>竞速赛比对决好懂，看时间就行。不过第二圈那段出界判罚我觉得有点严，白线压一点点就罚 2 秒。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#5b8def">夜</span><span class="c-name">夜航星</span><span class="c-time">今天 09:05</span></div>
+          <div class="c-target">限时挑战赛环湖公路</div>
+          <p>禁用氮气之后难度高太多了，3:10 这个目标第一天没人达标不奇怪，第二天才四个人进，看着都累。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#e2574c">陆</span><span class="c-name">陆迟的观众</span><span class="c-time">昨天 23:20</span></div>
+          <div class="c-target">陆迟</div>
+          <p>陆迟这轮起步慢了大概半秒，不然不至于差 1.47 秒。他前两圈成绩其实比阿岚快一点，可惜第三圈压线失误。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#c9a227">阿</span><span class="c-name">阿岚加油</span><span class="c-time">昨天 22:41</span></div>
+          <div class="c-target">选手积分榜</div>
+          <p>640 分领先 88 分，只要后面不连续失误，赛段第一基本稳了。不过总决赛是重新计分吧，那还得看临场。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#7d8ca4">冷</span><span class="c-name">冷静分析组</span><span class="c-time">昨天 21:55</span></div>
+          <div class="c-target">道具赛</div>
+          <p>道具箱减到两个之后，减速带的价值明显上升了。周三那场最后一段直道连着两次减速，直接改变了名次。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#4bbfa8">小</span><span class="c-name">小满冲冲</span><span class="c-time">昨天 20:30</span></div>
+          <div class="c-target">小满</div>
+          <p>小满这两周状态确实好，连续两场竞速赛第三，积分超过唐野不意外。就是对抗赛还差点火候。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#f5b93c">新</span><span class="c-name">新手小陈</span><span class="c-time">昨天 19:12</span></div>
+          <div class="c-target">新手练习赛</div>
+          <p>练习赛的语音提示挺好用，弯道前会告诉你在哪刹车，看完再去正赛能看懂选手为什么提前减速了。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#5b8def">高</span><span class="c-name">高架桥下</span><span class="c-time">昨天 18:44</span></div>
+          <div class="c-target">双人对决旧城高架</div>
+          <p>旧城高架没护墙，被撞一下直接掉出去，八强战估计会有人打得很保守。三局两胜给的压力太大了。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#e2574c">唐</span><span class="c-name">唐野观察</span><span class="c-time">11 月 6 日 23:10</span></div>
+          <div class="c-target">越野拉力</div>
+          <p>新加的两段泥地抓地力掉得厉害，第三圈基本没法提速。建议看回放的时候注意选手在泥地前的换挡时机。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#c9a227">计</span><span class="c-name">计时器爱好者</span><span class="c-time">11 月 6 日 21:30</span></div>
+          <div class="c-target">环城竞速</div>
+          <p>单圈最快制其实挺残酷的，第一圈跑崩了就只剩两次机会。不过这也让第三圈经常出现孤注一掷的压线。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#4bbfa8">接</span><span class="c-name">接力第四棒</span><span class="c-time">11 月 6 日 20:05</span></div>
+          <div class="c-target">团队接力赛</div>
+          <p>上周冠军队伍最后一棒换线抢了 1.4 秒，但交接区那次停留其实超过 2 秒了，没判罚有点争议。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#7d8ca4">路</span><span class="c-name">路过看看</span><span class="c-time">11 月 6 日 17:48</span></div>
+          <div class="c-target">整体观感</div>
+          <p>对决的对抗性确实强，但我还是更习惯看竞速，节奏稳定一些。对决偶尔会拖到第三局才分胜负，等得有点久。</p>
+        </div>
+
+        <div class="comment">
+          <div class="c-head"><span class="avatar" style="background:#5b8def">轨</span><span class="c-name">轨迹记录员</span><span class="c-time">11 月 6 日 15:22</span></div>
+          <div class="c-target">规则细则</div>
+          <p>切线判罚那条我看了两遍才明白，说的是连续两次切内线，第二次才罚。第一次算警告，这个区分挺重要。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <div class="sec-head">
+        <h2>赛事资讯 <small>近期规则与赛程变动</small></h2>
+      </div>
+
+      <article class="news-item">
+        <img src="https://picsum.photos/seed/rstar-news31/600/400" width="112" height="74" loading="lazy" alt="环城竞速第 7 轮赛果发布会现场">
+        <div>
+          <h4><a href="#news">环城竞速第 7 轮收官，阿岚领先优势扩大到 88 分</a></h4>
+          <p>本轮 9 人完赛，前四名差距均在 2 秒以内。赛事方确认第 8 轮仍沿用夜航线与北港隧道两条赛道。</p>
+          <span class="news-date">2026-11-08</span>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <img src="https://picsum.photos/seed/rstar-news14/600/400" width="112" height="74" loading="lazy" alt="道具赛北港隧道赛道路段示意">
+        <div>
+          <h4><a href="#news">道具赛规则修订：北港隧道道具箱减为两个</a></h4>
+          <p>减速带冷却同步缩短至 6 秒。赛事方表示改动目的是提高后半程不确定性，修订自本周三起执行。</p>
+          <span class="news-date">2026-11-07</span>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <img src="https://picsum.photos/seed/rstar-news22/600/400" width="112" height="74" loading="lazy" alt="限时挑战赛环湖公路赛道全景">
+        <div>
+          <h4><a href="#news">限时挑战赛环湖公路目标时间暂不调整</a></h4>
+          <p>首日无人达标，最快成绩 3:12.64。赛事方称目标时间按基准成绩上浮 3% 到 5% 设定，本期维持 3:10。</p>
+          <span class="news-date">2026-11-07</span>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <img src="https://picsum.photos/seed/rstar-news08/600/400" width="112" height="74" loading="lazy" alt="团队接力赛交接区俯视图">
+        <div>
+          <h4><a href="#news">团队接力赛本期报名 14 队，创秋季赛段新高</a></h4>
+          <p>比上期多出 3 支队伍，其中 5 支为新组建。比赛定于本周五 21:00 开赛，交接区判罚标准不变。</p>
+          <span class="news-date">2026-11-06</span>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <img src="https://picsum.photos/seed/rstar-news45/600/400" width="112" height="74" loading="lazy" alt="越野拉力新增泥地路段">
+        <div>
+          <h4><a href="#news">越野拉力赛道新增两段泥地，抓地力明显下降</a></h4>
+          <p>新增路段位于第二圈中段与第三圈起始处，官方已在规则页补充轮胎选择建议，本周二起启用。</p>
+          <span class="news-date">2026-11-06</span>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <img src="https://picsum.photos/seed/rstar-news19/600/400" width="112" height="74" loading="lazy" alt="新手练习赛语音提示界面">
+        <div>
+          <h4><a href="#news">新手练习赛加入弯道语音提示，覆盖三条基础赛道</a></h4>
+          <p>提示在弯前 3 秒播报刹车参考点，帮助新观众理解选手操作，不影响正式赛成绩与积分。</p>
+          <span class="news-date">2026-11-06</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="reco">
+      <div class="sec-head">
+        <h2>延伸方向 <small>按赛段、选手与规则延伸</small></h2>
+      </div>
+      <div class="reco-cloud">
+        <a href="#rank">秋季赛段积分走势 <b>榜单</b></a>
+        <a href="#rules">切线判罚与出界认定 <b>规则</b></a>
+        <a href="#featured">旧城高架窄道走线 <b>地图</b></a>
+        <a href="#comments">陆迟第三圈压线失误 <b>复盘</b></a>
+        <a href="#channels">限时挑战赛历期目标时间 <b>数据</b></a>
+        <a href="#guide">团队接力交接区技巧 <b>技巧</b></a>
+        <a href="#latest">道具赛减速带使用时机 <b>打法</b></a>
+        <a href="#overview">新手练习赛基础赛道 <b>入门</b></a>
+      </div>
+    </section>
+
+    <!-- 11. 补充板块：选手积分榜 -->
+    <section class="section" id="rank">
+      <div class="sec-head">
+        <h2>选手积分榜 <small>截至 11 月 8 日第 7 轮</small></h2>
+      </div>
+      <div class="rank-table">
+        <div class="rank-row head"><span>排名</span><span>选手</span><span style="text-align:right">积分</span><span style="text-align:right">变动</span></div>
+        <div class="rank-row"><span class="rk">1</span><span class="rname">阿岚<small>竞速赛 4 冠 · 平均 2:42.1</small></span><span class="rscore">640</span><span class="rtrend up">↑ 稳定</span></div>
+        <div class="rank-row"><span class="rk">2</span><span class="rname">陆迟<small>竞速赛 2 冠 · 对决 5 胜</small></span><span class="rscore">552</span><span class="rtrend up">↑ 1</span></div>
+        <div class="rank-row"><span class="rk">3</span><span class="rname">小满<small>竞速赛连续两场第三</small></span><span class="rscore">512</span><span class="rtrend up">↑ 1</span></div>
+        <div class="rank-row"><span class="rk">4</span><span class="rname">唐野<small>越野拉力 1 冠</small></span><span class="rscore">500</span><span class="rtrend down">↓ 2</span></div>
+        <div class="rank-row"><span class="rk">5</span><span class="rname">周砚<small>挑战赛达标 3 次</small></span><span class="rscore">438</span><span class="rtrend up">↑ 2</span></div>
+        <div class="rank-row"><span class="rk">6</span><span class="rname">苏禾<small>对决胜率 62%</small></span><span class="rscore">415</span><span class="rtrend down">↓ 1</span></div>
+        <div class="rank-row"><span class="rk">7</span><span class="rname">陈屿<small>接力赛主力</small></span><span class="rscore">389</span><span class="rtrend up">↑ 1</span></div>
+        <div class="rank-row"><span class="rk">8</span><span class="rname">何夕<small>道具赛 2 胜</small></span><span class="rscore">362</span><span class="rtrend down">↓ 2</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右：辅助栏 -->
+  <aside class="aside-col" aria-label="辅助信息">
+    <div class="side-box">
+      <div class="side-title">今日赛程</div>
+      <ul class="sched">
+        <li class="now"><span>环城竞速第 7 轮</span><span>已结束</span></li>
+        <li><span>双人对决八强战</span><span>20:00</span></li>
+        <li><span>新手练习赛</span><span>全天开放</span></li>
+        <li><span>表演赛</span><span>22:30</span></li>
+      </ul>
+    </div>
+
+    <div class="side-box">
+      <div class="side-title">本周热看</div>
+      <ul class="hot-list">
+        <li><span class="num">1</span><div><a href="#featured">夜航线环城竞速第 7 轮</a><small>回放 · 14:20</small></div></li>
+        <li><span class="num">2</span><div><a href="#featured">双人对决旧城高架八强战</a><small>直播 · 20:00</small></div></li>
+        <li><span class="num">3</span><div><a href="#featured">限时挑战环湖公路</a><small>周末 · 达标 4 人</small></div></li>
+        <li><span class="num">4</span><div><a href="#featured">团队接力赛四人换棒</a><small>周五 · 21:00</small></div></li>
+        <li><span class="num">5</span><div><a href="#featured">道具赛北港隧道改动</a><small>回放 · 11:05</small></div></li>
+        <li><span class="num">6</span><div><a href="#featured">越野拉力泥地路段</a><small>周二 · 赛道更新</small></div></li>
+      </ul>
+    </div>
+
+    <div class="side-box">
+      <div class="side-title">赛段进度</div>
+      <ul class="sched">
+        <li><span>当前轮次</span><span>第 7 轮</span></li>
+        <li><span>已完成场次</span><span>58 场</span></li>
+        <li><span>剩余轮次</span><span>3 轮</span></li>
+        <li><span>总决赛名额</span><span>16 人</span></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ===== 页尾 ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1b2436" stroke="#2a374d"/>
+            <path d="M12 42l11-20 9 13 6-9 14 16z" fill="#f5b93c"/>
+            <circle cx="47" cy="19" r="6" fill="#e2574c"/>
+            <path d="M12 50h40" stroke="#4bbfa8" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text">r星每日大赛在线观看</span>
+        </div>
+        <p>按日汇总环城竞速、双人对决与限时挑战三类赛事，提供赛程、回放入口、规则判罚解析与选手积分变化。</p>
+      </div>
+      <div class="footer-col">
+        <h4>赛事类型</h4>
+        <a href="#channels">环城竞速</a>
+        <a href="#channels">越野拉力</a>
+        <a href="#channels">双人对决</a>
+        <a href="#channels">限时挑战</a>
+        <a href="#channels">团队接力</a>
+      </div>
+      <div class="footer-col">
+        <h4>规则与数据</h4>
+        <a href="#rules">判罚解析</a>
+        <a href="#rank">选手积分榜</a>
+        <a href="#compare">类型对照</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <div class="footer-col">
+        <h4>观赛入口</h4>
+        <a href="#featured">今日赛程</a>
+        <a href="#latest">最新动态</a>
+        <a href="#news">赛事资讯</a>
+        <a href="#guide">观赛路径</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 r星每日大赛在线观看 · 内容聚合示例站点</span>
+      <span>部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('searchInput');
+  var feedback = document.getElementById('latestFeedback');
+  var feed = document.getElementById('latestFeed');
+  if(!form || !input || !feedback || !feed) return;
+
+  var items = Array.prototype.slice.call(feed.querySelectorAll('.feed-item'));
+
+  function clearState(){
+    feedback.classList.remove('show');
+    feedback.innerHTML = '';
+    items.forEach(function(el){ el.classList.remove('hidden-item'); });
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q = (input.value || '').trim().toLowerCase();
+    if(!q){ clearState(); return; }
+    var hits = 0;
+    items.forEach(function(el){
+      var text = (el.textContent || '').toLowerCase();
+      if(text.indexOf(q) !== -1){
+        el.classList.remove('hidden-item');
+        hits++;
+      }else{
+        el.classList.add('hidden-item');
+      }
+    });
+    feedback.classList.add('show');
+    if(hits === 0){
+      feedback.innerHTML = '未找到与「<b>' + escapeHtml(input.value.trim()) + '</b>」匹配的动态，可尝试「竞速」「对决」「挑战」「选手指南」等关键词。';
+    }else{
+      feedback.innerHTML = '在最新动态中找到 <b>' + hits + '</b> 条与「<b>' + escapeHtml(input.value.trim()) + '</b>」相关的内容。';
+    }
+  });
+
+  input.addEventListener('input', function(){
+    if(!input.value.trim()) clearState();
+  });
+
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+})();
+</script>
+
+</body>
+  </html>
