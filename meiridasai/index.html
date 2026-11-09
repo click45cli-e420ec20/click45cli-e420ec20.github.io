@@ -1,0 +1,1740 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日大赛合集 - 赛事速览与深度解析</title>
+  <meta name="description" content="每日大赛合集汇集编程马拉松、创业路演、数学建模、创意设计等每日可参与赛事的完整指南与解析，适合学生、开发者、创业者快速筛选并跟进当日赛程与规则。">
+  <meta name="keywords" content="编程马拉松,创业路演,数学建模竞赛,创意设计赛,赛程日历">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d3557'/%3E%3Cpath d='M18 22h28v6H18zM18 34h20v6H18z' fill='%23f4a261'/%3E%3Ccircle cx='48' cy='46' r='6' fill='%23e76f51'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #1d2b3a;
+      --ink-soft: #475569;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --paper: #f8fafc;
+      --white: #ffffff;
+      --brand: #1d3557;
+      --brand-2: #2a4d7a;
+      --accent: #e76f51;
+      --accent-soft: #fbe9e3;
+      --gold: #f4a261;
+      --teal: #2a9d8f;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow: 0 6px 24px rgba(29, 53, 87, 0.08);
+      --shadow-sm: 0 2px 10px rgba(29, 53, 87, 0.06);
+      --maxw: 1320px;
+      --announce-h: 42px;
+      --head-h: 68px;
+      --sticky-offset: 118px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 吸顶公告条 */
+    .announce {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      color: #fff;
+      height: var(--announce-h);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-size: 13.5px;
+    }
+    .announce-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      white-space: nowrap;
+    }
+    .announce-badge {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: .5px;
+      flex-shrink: 0;
+    }
+    .announce-track {
+      display: flex;
+      gap: 34px;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+    }
+    .announce-track span { color: #e8eef7; }
+    .announce-track b { color: var(--gold); font-weight: 700; }
+
+    /* 吸顶页头 */
+    .site-head {
+      position: sticky;
+      top: var(--announce-h);
+      z-index: 55;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      height: var(--head-h);
+    }
+    .head-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+    .brand-mark {
+      width: 38px; height: 38px;
+      display: grid; place-items: center;
+      background: var(--brand);
+      border-radius: 11px;
+      flex-shrink: 0;
+    }
+    .brand-text {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+      white-space: nowrap;
+    }
+    .head-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .head-nav::-webkit-scrollbar { display: none; }
+    .head-nav a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 13.5px;
+      padding: 7px 11px;
+      border-radius: 7px;
+      white-space: nowrap;
+      transition: background .15s, color .15s;
+    }
+    .head-nav a:hover, .head-nav a:focus-visible {
+      background: var(--accent-soft);
+      color: var(--brand);
+      outline: none;
+    }
+    .head-action {
+      flex-shrink: 0;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .head-action:hover { background: var(--brand-2); }
+
+    /* 主容器 */
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 首屏 */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #12263f 0%, #1d3557 55%, #24456e 100%);
+      color: #fff;
+      border-radius: 0 0 26px 26px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(244,162,97,.22), transparent 42%),
+        radial-gradient(circle at 12% 88%, rgba(42,157,143,.20), transparent 46%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 52px 20px 54px;
+      display: grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .hero-eyebrow::before {
+      content: "";
+      width: 26px; height: 2px;
+      background: var(--gold);
+      display: inline-block;
+    }
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 15.5px;
+      color: #d6e2f0;
+      max-width: 560px;
+      margin-bottom: 26px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 14.5px;
+      transition: transform .15s, background .15s;
+    }
+    .btn-primary:hover { background: #d95a3c; transform: translateY(-1px); }
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,.35);
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 9px;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: background .15s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+    /* 首屏视觉 */
+    .hero-visual {
+      position: relative;
+      min-height: 260px;
+    }
+    .visual-card {
+      position: absolute;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 14px;
+      padding: 14px 16px;
+      backdrop-filter: blur(6px);
+    }
+    .visual-card strong { display: block; font-size: 14px; color: #fff; }
+    .visual-card span { font-size: 12px; color: #b9cbe0; }
+    .vc1 { top: 4px; left: 0; width: 62%; animation: floaty 6s ease-in-out infinite; }
+    .vc2 { top: 96px; right: 0; width: 56%; animation: floaty 7s ease-in-out infinite .8s; }
+    .vc3 { bottom: 6px; left: 14%; width: 58%; animation: floaty 8s ease-in-out infinite .4s; }
+    .vc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-right: 6px; vertical-align: middle; }
+    .vc-dot.teal { background: var(--teal); }
+    .vc-dot.accent { background: var(--accent); }
+    @keyframes floaty {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .hero-tagline {
+      margin-top: 22px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12.5px;
+    }
+    .hero-tagline span {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 4px 12px;
+      border-radius: 999px;
+      color: #cfe0f2;
+    }
+
+    /* 三栏布局 */
+    .layout {
+      display: grid;
+      grid-template-columns: 178px minmax(0,1fr) 252px;
+      gap: 26px;
+      padding: 34px 0 60px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-index {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 12px);
+    }
+    .channel-index h2 {
+      font-size: 12px;
+      letter-spacing: 1.4px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .channel-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .channel-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 14px;
+      padding: 8px 11px;
+      border-radius: 8px;
+      transition: background .15s, color .15s;
+    }
+    .channel-list a:hover, .channel-list a:focus-visible {
+      background: var(--white);
+      color: var(--brand);
+      box-shadow: var(--shadow-sm);
+      outline: none;
+    }
+    .channel-list a .num {
+      font-size: 11px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .channel-foot {
+      margin-top: 18px;
+      padding: 14px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .channel-foot b { color: var(--brand); display: block; font-size: 13px; margin-bottom: 4px; }
+
+    /* 主内容区 */
+    .main-col { min-width: 0; }
+    .block { margin-bottom: 40px; }
+    .block-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 10px;
+    }
+    .block-head h2 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .block-head h2::before {
+      content: "";
+      width: 5px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 3px;
+      display: inline-block;
+    }
+    .block-head .more {
+      font-size: 12.5px;
+      color: var(--muted);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .block-head .more:hover { color: var(--accent); }
+
+    /* 领域概览 */
+    .overview-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .overview-card p {
+      color: var(--ink-soft);
+      font-size: 14.8px;
+      margin-bottom: 12px;
+    }
+    .overview-card p:last-child { margin-bottom: 0; }
+    .overview-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .overview-highlight span {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+    .event-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform .18s, box-shadow .18s;
+      display: flex;
+      flex-direction: column;
+    }
+    .event-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .event-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
+    }
+    .event-body { padding: 13px 15px 15px; display: flex; flex-direction: column; flex: 1; }
+    .event-type {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--teal);
+      background: #e6f5f2;
+      border-radius: 5px;
+      padding: 1px 8px;
+      margin-bottom: 7px;
+      align-self: flex-start;
+    }
+    .event-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .event-desc {
+      font-size: 12.8px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .event-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--muted);
+      border-top: 1px dashed var(--line);
+      padding-top: 9px;
+    }
+    .event-meta .heat { color: var(--accent); font-weight: 700; }
+    .tag-row { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 9px; }
+    .tag-row span {
+      font-size: 11px;
+      color: var(--brand-2);
+      background: #eef2f8;
+      border-radius: 4px;
+      padding: 1px 7px;
+    }
+
+    /* 动态列表 */
+    .updates-list {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .update-item {
+      display: flex;
+      gap: 14px;
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--line);
+      align-items: flex-start;
+      transition: background .15s;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item:hover { background: #fbfdff; }
+    .update-time {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
+      min-width: 74px;
+    }
+    .update-content { flex: 1; }
+    .update-content strong {
+      display: block;
+      font-size: 14px;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .update-content p { font-size: 12.8px; color: var(--muted); }
+    .live-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 6px;
+      animation: pulse 1.6s infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+    }
+    .cat-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 15px 14px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cat-item:hover, .cat-item:focus-visible {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .cat-item strong { font-size: 14px; font-weight: 700; }
+    .cat-item span { font-size: 11.5px; color: var(--muted); }
+
+    /* 深度解析 */
+    .article-body {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 30px;
+      box-shadow: var(--shadow-sm);
+    }
+    .article-body h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--brand);
+      margin: 24px 0 10px;
+      padding-left: 12px;
+      border-left: 4px solid var(--gold);
+    }
+    .article-body h3:first-of-type { margin-top: 0; }
+    .article-body p {
+      color: var(--ink-soft);
+      font-size: 14.6px;
+      margin-bottom: 12px;
+    }
+    .article-body ul {
+      margin: 8px 0 16px 20px;
+      color: var(--ink-soft);
+      font-size: 14.4px;
+    }
+    .article-body li { margin-bottom: 7px; }
+    .article-body li strong { color: var(--ink); }
+    .callout {
+      background: #fdf7f0;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 13.8px;
+      color: #7a5b33;
+      margin: 16px 0;
+    }
+
+    /* 体验指南步骤 */
+    .step-list { display: flex; flex-direction: column; gap: 12px; }
+    .step-item {
+      display: flex;
+      gap: 16px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .step-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .step-item p { font-size: 13.3px; color: var(--muted); }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-list details {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 0 18px;
+      transition: box-shadow .15s;
+    }
+    .faq-list details[open] { box-shadow: var(--shadow-sm); border-color: #cbd8e8; }
+    .faq-list summary {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--ink);
+      padding: 15px 0;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after {
+      content: "+";
+      font-size: 20px;
+      color: var(--accent);
+      font-weight: 400;
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    .faq-list details[open] summary::after { transform: rotate(45deg); }
+    .faq-list .faq-answer {
+      padding: 0 0 16px;
+      font-size: 13.6px;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+    }
+    .comment-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 7px;
+    }
+    .avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand-2), var(--teal));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .comment-head .nick { font-size: 13px; font-weight: 700; color: var(--ink); }
+    .comment-head .date { font-size: 11px; color: var(--muted); margin-left: auto; }
+    .comment-card p { font-size: 13px; color: var(--ink-soft); line-height: 1.65; }
+    .comment-card p b { color: var(--brand); }
+
+    /* 资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 12px; }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      align-items: center;
+      transition: box-shadow .15s;
+    }
+    .news-item:hover { box-shadow: var(--shadow-sm); }
+    .news-item img {
+      width: 104px; height: 70px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .news-body { min-width: 0; }
+    .news-body h3 { font-size: 14.5px; font-weight: 700; margin-bottom: 3px; color: var(--ink); }
+    .news-body p { font-size: 12.8px; color: var(--muted); margin-bottom: 5px; }
+    .news-body .date { font-size: 11.5px; color: #94a3b8; }
+
+    /* 相关推荐 */
+    .recommend-tags { display: flex; flex-wrap: wrap; gap: 9px; }
+    .recommend-tags a {
+      text-decoration: none;
+      font-size: 13px;
+      color: var(--brand);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 15px;
+      transition: background .15s, border-color .15s;
+    }
+    .recommend-tags a:hover, .recommend-tags a:focus-visible {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      outline: none;
+    }
+
+    /* 补充板块：热门榜单 */
+    .ranking-list {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-num {
+      font-size: 16px;
+      font-weight: 900;
+      color: #cbd5e1;
+      width: 24px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .rank-item:nth-child(1) .rank-num { color: var(--accent); }
+    .rank-item:nth-child(2) .rank-num { color: #f59e0b; }
+    .rank-item:nth-child(3) .rank-num { color: var(--teal); }
+    .rank-body { flex: 1; min-width: 0; }
+    .rank-body strong { font-size: 14px; display: block; }
+    .rank-body span { font-size: 12px; color: var(--muted); }
+    .rank-score {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 右辅助栏 */
+    .side-col {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 12px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .side-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 17px 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .side-panel h2 {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--brand);
+      margin-bottom: 12px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .side-panel h2::before {
+      content: "";
+      width: 4px; height: 14px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .side-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .side-list li { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+    .side-list li a { color: var(--ink-soft); text-decoration: none; }
+    .side-list li a:hover { color: var(--accent); }
+    .side-list .side-date { font-size: 11.5px; color: var(--muted); display: block; margin-top: 1px; }
+    .side-rule {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .side-rule b { color: var(--brand); }
+    .side-rule ul { margin: 6px 0 0 16px; }
+
+    /* 页尾 */
+    .site-foot {
+      background: #12263f;
+      color: #c3d2e2;
+      padding: 44px 0 26px;
+      margin-top: 20px;
+    }
+    .foot-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .foot-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .foot-brand .brand-mark { background: var(--accent); }
+    .foot-brand strong { color: #fff; font-size: 17px; font-weight: 800; }
+    .foot-desc { font-size: 13px; color: #93a8bf; line-height: 1.75; max-width: 300px; }
+    .foot-col h3 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 12px; letter-spacing: .5px; }
+    .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .foot-col a { color: #a8bcd1; text-decoration: none; font-size: 13px; }
+    .foot-col a:hover { color: var(--gold); }
+    .foot-bottom {
+      max-width: var(--maxw);
+      margin: 30px auto 0;
+      padding: 18px 20px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      font-size: 12px;
+      color: #7e94ab;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 搜索框 */
+    .search-box {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .search-box input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-family: inherit;
+      background: var(--paper);
+    }
+    .search-box input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+    .search-box button {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .search-box button:hover { background: var(--brand-2); }
+    .search-feedback {
+      font-size: 12.5px;
+      color: var(--accent);
+      margin-top: 8px;
+      min-height: 18px;
+    }
+
+    /* 锚点偏移 */
+    section[id], div[id] { scroll-margin-top: var(--sticky-offset); }
+
+    /* 响应式 */
+    @media (max-width: 1120px) {
+      .layout { grid-template-columns: 160px minmax(0,1fr) 232px; gap: 20px; }
+      .card-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .cat-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    }
+    @media (max-width: 1024px) {
+      .layout {
+        grid-template-columns: minmax(0,1fr) 260px;
+        gap: 24px;
+      }
+      .channel-index {
+        position: static;
+        grid-column: 1 / -1;
+        order: -1;
+      }
+      .channel-list { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+      .channel-list a { background: var(--white); border: 1px solid var(--line); }
+      .channel-foot { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 20px; padding: 40px 20px; }
+      .hero h1 { font-size: 34px; }
+      .hero-visual { display: none; }
+      .side-col { position: static; }
+    }
+    @media (max-width: 740px) {
+      :root { --sticky-offset: 112px; }
+      .layout { grid-template-columns: 1fr; gap: 22px; }
+      .side-col { order: 2; }
+      .main-col { order: 1; }
+      .head-nav { display: none; }
+      .head-inner { gap: 12px; }
+      .brand-text { font-size: 16px; }
+      .hero h1 { font-size: 28px; }
+      .hero-desc { font-size: 14px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .comment-grid { grid-template-columns: 1fr; }
+      .article-body { padding: 20px 18px; }
+      .block-head h2 { font-size: 18px; }
+      .foot-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .announce-inner { gap: 8px; }
+      .announce-track span { font-size: 12px; }
+      .news-item img { width: 76px; height: 58px; }
+      .update-item { padding: 11px 13px; }
+      .update-time { min-width: 60px; font-size: 11px; }
+    }
+    @media (max-width: 400px) {
+      .foot-inner { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: 1fr; }
+    }
+
+    /* 可访问性焦点 */
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce" role="region" aria-label="赛事公告">
+    <div class="announce-inner">
+      <span class="announce-badge">NEW</span>
+      <div class="announce-track">
+        <span>本周新增 <b>12 场</b> 可报名赛事</span>
+        <span>11 月 8 日 <b>数学建模模拟赛</b> 15:00 开赛</span>
+        <span>创业路演秋季专场 <b>报名截止 11 月 10 日</b></span>
+        <span>设计挑战赛 <b>命题公布</b>：城市公共空间</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="brand" href="/#top" aria-label="每日大赛合集 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16v3H4zM4 12h11v3H4z" fill="#f4a261"/>
+            <circle cx="18.5" cy="17.5" r="3.5" fill="#e76f51"/>
+            <path d="M17 17.5l1.1 1.1 2-2" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">每日大赛合集</span>
+      </a>
+      <nav class="head-nav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选赛事</a>
+        <a href="/#updates">今日动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deepdive">深度解析</a>
+        <a href="/#guide">参与指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">参赛者评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#ranking">热门榜单</a>
+      </nav>
+      <button class="head-action" onclick="document.getElementById('search-input').focus()">查找赛事</button>
+    </div>
+  </header>
+
+  <!-- 主题首屏 -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-eyebrow">DAILY COMPETITION DIGEST</span>
+        <h1>每日大赛合集</h1>
+        <p class="hero-desc">
+          汇集编程马拉松、创业路演、数学建模、创意设计等每日可参与赛事的完整赛程、规则拆解与备赛要点，帮助你在同一天的多场活动中快速判断优先级、锁定适合自己能力阶段的挑战。
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="/#featured">浏览今日精选赛事</a>
+          <a class="btn-ghost" href="/#guide">查看参与路径</a>
+        </div>
+        <div class="hero-tagline">
+          <span>编程马拉松</span>
+          <span>创业路演</span>
+          <span>数学建模</span>
+          <span>创意设计</span>
+          <span>商业案例</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-card vc1">
+          <strong><span class="vc-dot"></span>48 小时编程马拉松</strong>
+          <span>11 月 8 日 20:00 开赛 · 已报名 1,284 人</span>
+        </div>
+        <div class="visual-card vc2">
+          <strong><span class="vc-dot teal"></span>创业路演秋季场</strong>
+          <span>项目评审维度：市场 / 团队 / 壁垒</span>
+        </div>
+        <div class="visual-card vc3">
+          <strong><span class="vc-dot accent"></span>数学建模模拟赛</strong>
+          <span>今日 15:00 发布 A/B 题 · 72 小时窗口</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏布局 -->
+  <div class="container">
+    <div class="layout">
+
+      <!-- 左频道索引 -->
+      <aside class="channel-index" aria-label="频道索引">
+        <h2>赛程频道</h2>
+        <ul class="channel-list">
+          <li><a href="/#featured">编程马拉松 <span class="num">06</span></a></li>
+          <li><a href="/#featured">创业路演 <span class="num">05</span></a></li>
+          <li><a href="/#featured">数学建模 <span class="num">04</span></a></li>
+          <li><a href="/#featured">创意设计 <span class="num">07</span></a></li>
+          <li><a href="/#featured">商业案例 <span class="num">03</span></a></li>
+          <li><a href="/#featured">数据分析 <span class="num">05</span></a></li>
+          <li><a href="/#featured">产品原型 <span class="num">04</span></a></li>
+          <li><a href="/#featured">公共议题 <span class="num">03</span></a></li>
+          <li><a href="/#updates">今日开赛 <span class="num">09</span></a></li>
+          <li><a href="/#guide">新手专场 <span class="num">02</span></a></li>
+        </ul>
+        <div class="channel-foot">
+          <b>今日赛程提醒</b>
+          数学建模模拟赛 15:00 发题；编程马拉松 20:00 开放提交；创业路演彩排 19:30 线上进行。
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="main-col" id="main-content">
+
+        <!-- 1. 主题领域概览 -->
+        <section class="block" id="overview">
+          <div class="block-head">
+            <h2>每日大赛合集领域概览</h2>
+          </div>
+          <div class="overview-card">
+            <p>
+              每日大赛合集覆盖的赛事类型以“短周期、可当日跟进、评审标准明确”为核心特征。编程马拉松通常要求 24 至 48 小时内完成原型开发与路演材料；创业路演更看重商业模式完整度与团队分工；数学建模竞赛在 72 小时窗口内考察问题抽象与论文表达；创意设计挑战则围绕命题给出视觉或空间方案。这些赛事共同构成了一个高频次、多入口的参与生态。
+            </p>
+            <p>
+              当前值得关注的具体方向包括：面向零基础参赛者的“新手友好赛道”、以真实企业命题为主的“产业命题赛”、强调跨学科组队的“混合挑战赛”，以及以作品集产出为目标的“设计冲刺赛”。不同赛事的评审权重差异明显——有的将技术实现占比压到 40% 以下，转而考核叙事与用户洞察；有的则要求代码提交记录完整可追溯。
+            </p>
+            <div class="overview-highlight">
+              <span>48 小时原型开发</span>
+              <span>72 小时建模窗口</span>
+              <span>路演 8 分钟陈述</span>
+              <span>设计命题可追溯</span>
+              <span>新手友好赛道</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section class="block" id="featured">
+          <div class="block-head">
+            <h2>今日精选赛事</h2>
+            <a class="more" href="/#updates">查看完整赛程 →</a>
+          </div>
+          <div class="card-grid">
+
+            <article class="event-card">
+              <img src="https://picsum.photos/seed/hackathon48a/400/300" alt="48小时城市数据编程马拉松封面" width="400" height="300" loading="lazy">
+              <div class="event-body">
+                <span class="event-type">编程马拉松</span>
+                <h3 class="event-title">城市数据开放 48 小时挑战</h3>
+                <div class="tag-row"><span>开放数据</span><span>可视化</span><span>团队赛</span></div>
+                <p class="event-desc">围绕城市交通与公共设施开放数据构建可视化工具，要求提交可运行原型与 3 分钟演示视频，评审侧重数据故事完整度。</p>
+                <div class="event-meta"><span class="heat">热度 9,820</span><span>11-08 20:00 开赛</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <img src="https://picsum.photos/seed/pitchfalla/400/300" alt="创业路演秋季专场封面" width="400" height="300" loading="lazy">
+              <div class="event-body">
+                <span class="event-type">创业路演</span>
+                <h3 class="event-title">秋季消费品牌路演专场</h3>
+                <div class="tag-row"><span>消费品牌</span><span>早期项目</span><span>投资人评审</span></div>
+                <p class="event-desc">面向种子轮至天使轮的消费品牌项目，8 分钟陈述加 7 分钟问答，评审关注复购模型、渠道成本与团队补齐度。</p>
+                <div class="event-meta"><span class="heat">热度 7,460</span><span>11-10 报名截止</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <img src="https://picsum.photos/seed/mathmodel72a/400/300" alt="数学建模模拟赛题目发布封面" width="400" height="300" loading="lazy">
+              <div class="event-body">
+                <span class="event-type">数学建模</span>
+                <h3 class="event-title">72 小时数学建模模拟赛</h3>
+                <div class="tag-row"><span>A/B 双题</span><span>论文提交</span><span>三人组队</span></div>
+                <p class="event-desc">今日 15:00 发布 A 题资源调度与 B 题城市人口流动两类题目，72 小时内提交完整论文，提供往届优秀论文结构参考。</p>
+                <div class="event-meta"><span class="heat">热度 6,130</span><span>今日 15:00 发题</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <img src="https://picsum.photos/seed/designcitya/400/300" alt="城市公共空间创意设计挑战封面" width="400" height="300" loading="lazy">
+              <div class="event-body">
+                <span class="event-type">创意设计</span>
+                <h3 class="event-title">城市公共空间微更新挑战</h3>
+                <div class="tag-row"><span>空间设计</span><span>命题赛</span><span>方案评审</span></div>
+                <p class="event-desc">针对老旧社区口袋公园提出微更新方案，需包含平面图、动线分析与材料预算，评审重视落地可行性与居民使用频率。</p>
+                <div class="event-meta"><span class="heat">热度 5,870</span><span>命题已公布</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <img src="https://picsum.photos/seed/bizcasea/400/300" alt="商业案例分析挑战赛封面" width="400" height="300" loading="lazy">
+              <div class="event-body">
+                <span class="event-type">商业案例</span>
+                <h3 class="event-title">新茶饮品牌增长案例分析赛</h3>
+                <div class="tag-row"><span>案例拆解</span><span>财务测算</span><span>四人组队</span></div>
+                <p class="event-desc">基于给定品牌三年经营数据完成增长诊断，输出门店模型与区域扩张建议，要求附敏感性分析表与关键假设说明。</p>
+                <div class="event-meta"><span class="heat">热度 4,950</span><span>11-07 已开题</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <img src="https://picsum.photos/seed/prototypec/400/300" alt="产品原型冲刺赛封面" width="400" height="300" loading="lazy">
+              <div class="event-body">
+                <span class="event-type">产品原型</span>
+                <h3 class="event-title">无障碍产品原型冲刺赛</h3>
+                <div class="tag-row"><span>无障碍设计</span><span>可用性测试</span><span>个人可报</span></div>
+                <p class="event-desc">为视障用户设计一款日常工具类 App 核心流程，需提交交互原型与至少 3 位目标用户测试记录，评审强调可访问性细节。</p>
+                <div class="event-meta"><span class="heat">热度 4,320</span><span>11-09 提交截止</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <img src="https://picsum.photos/seed/dataanalysta/400/300" alt="数据分析实战赛封面" width="400" height="300" loading="lazy">
+              <div class="event-body">
+                <span class="event-type">数据分析</span>
+                <h3 class="event-title">零售库存周转分析实战赛</h3>
+                <div class="tag-row"><span>库存优化</span><span>SQL 实操</span><span>个人赛</span></div>
+                <p class="event-desc">给定连锁零售 12 个月进销存数据，找出库存周转异常门店并提出补货策略，需提交可复现查询语句与结论摘要。</p>
+                <div class="event-meta"><span class="heat">热度 3,980</span><span>11-08 进行中</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <img src="https://picsum.photos/seed/newbiehacka/400/300" alt="零基础编程马拉松新手赛道封面" width="400" height="300" loading="lazy">
+              <div class="event-body">
+                <span class="event-type">新手专场</span>
+                <h3 class="event-title">零基础编程马拉松新手赛道</h3>
+                <div class="tag-row"><span>先修引导</span><span>导师驻场</span><span>个人可报</span></div>
+                <p class="event-desc">专为首次参赛者设置，提供 6 小时先修工作坊与现场导师，任务拆分为可独立完成的小模块，评审不以代码量论高低。</p>
+                <div class="event-meta"><span class="heat">热度 3,740</span><span>11-12 开放报名</span></div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 / 今日动态 -->
+        <section class="block" id="updates">
+          <div class="block-head">
+            <h2>今日赛事动态</h2>
+          </div>
+          <div class="updates-list">
+            <div class="update-item">
+              <span class="update-time">今天 09:30</span>
+              <div class="update-content"><strong><span class="live-dot"></span>数学建模模拟赛 A/B 题正式公布</strong><p>题目附件在赛事页可下载，72 小时计时从今日 15:00 开始，论文提交通道同步开放。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">今天 08:15</span>
+              <div class="update-content"><strong>城市数据开放挑战赛公布评审细则</strong><p>新增“数据可复现性”评分项，占总分 15%，要求提交数据清洗脚本。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">昨天 21:10</span>
+              <div class="update-content"><strong>创业路演秋季专场确认 24 个项目入围</strong><p>入围名单已发布，11 月 10 日进行线上彩排，正式路演定于 11 月 14 日。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">昨天 17:40</span>
+              <div class="update-content"><strong>城市公共空间微更新挑战赛命题答疑汇总更新</strong><p>补充了预算上限与居民调研样本量要求，答疑文档已更新至第三版。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 6 日</span>
+              <div class="update-content"><strong>零售库存周转分析赛开放数据集下载</strong><p>数据集包含 12 个月进销存明细，配套字段说明与脱敏规则已同步发布。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 5 日</span>
+              <div class="update-content"><strong>新茶饮增长案例赛新增财务测算模板</strong><p>组委会提供标准化的三年损益与门店模型模板，参赛队可自行扩展假设。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 3 日</span>
+              <div class="update-content"><strong>无障碍产品原型冲刺赛延长提交窗口</strong><p>提交截止延至 11 月 9 日 23:59，新增“用户测试记录完整性”加分项。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 2 日</span>
+              <div class="update-content"><strong>零基础编程马拉松新手赛道开放预报名</strong><p>预报名可优先进入先修工作坊，正式报名 11 月 12 日开启，限额 200 人。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">10 月 30 日</span>
+              <div class="update-content"><strong>48 小时城市数据挑战赛公布往届优秀作品</strong><p>五份往届原型与演示文稿开放参考，附评审点评摘要。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">10 月 28 日</span>
+              <div class="update-content"><strong>创业路演专场新增“消费品牌”细分组别</strong><p>消费品牌项目单独评审，与科技类项目分开排名，评审团构成也相应调整。</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section class="block" id="categories">
+          <div class="block-head">
+            <h2>按赛事类型查找</h2>
+          </div>
+          <div class="cat-grid">
+            <a class="cat-item" href="/#featured"><strong>编程马拉松</strong><span>48 小时原型开发</span></a>
+            <a class="cat-item" href="/#featured"><strong>创业路演</strong><span>商业计划与陈述</span></a>
+            <a class="cat-item" href="/#featured"><strong>数学建模</strong><span>72 小时论文赛</span></a>
+            <a class="cat-item" href="/#featured"><strong>创意设计</strong><span>命题方案输出</span></a>
+            <a class="cat-item" href="/#featured"><strong>商业案例</strong><span>数据诊断与建议</span></a>
+            <a class="cat-item" href="/#featured"><strong>数据分析</strong><span>SQL 与结论复现</span></a>
+            <a class="cat-item" href="/#featured"><strong>产品原型</strong><span>交互与可用性</span></a>
+            <a class="cat-item" href="/#featured"><strong>公共议题</strong><span>社会价值命题</span></a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析正文 -->
+        <section class="block" id="deepdive">
+          <div class="block-head">
+            <h2>赛事类型差异与评审维度解析</h2>
+          </div>
+          <div class="article-body">
+            <h3>编程马拉松：交付节奏比技术栈更关键</h3>
+            <p>
+              编程马拉松的核心不是写最多代码，而是在固定时间内交付可演示、可讲述的完整闭环。常见评审维度包括：问题定义是否清晰、原型是否可运行、演示是否能在 3 分钟内讲清价值。以城市数据开放挑战为例，得分权重通常为数据故事 35%、原型完整度 35%、演示表达 20%、可复现性 10%。这意味着团队需要在开赛前就确定数据来源与可视化框架，把时间留给故事打磨而非环境搭建。
+            </p>
+            <ul>
+              <li><strong>适合人群：</strong>有基础开发能力、能接受高强度协作的参赛者。</li>
+              <li><strong>关键准备：</strong>提前准备数据清洗脚本模板与演示文稿骨架。</li>
+              <li><strong>常见失分点：</strong>功能贪多导致主流程演示失败，或数据来源不清晰。</li>
+            </ul>
+
+            <h3>创业路演：陈述结构与数据支撑同等重要</h3>
+            <p>
+              8 分钟陈述加 7 分钟问答的路演节奏，要求团队把商业模式压缩成可被快速理解的叙事。评审通常关注市场规模测算依据、获客成本与复购假设、团队能力与项目阶段的匹配度。消费品牌专场还会额外考察渠道结构与供应链稳定性。与编程马拉松不同，路演更看重“假设是否可验证”，而非产品是否已上线。
+            </p>
+            <div class="callout">
+              路演材料中，把“我们预计”替换为“我们验证了”并附上具体数据来源，通常能显著提升评审对项目可信度的判断。
+            </div>
+
+            <h3>数学建模：论文结构决定得分下限</h3>
+            <p>
+              72 小时窗口内，建模赛的评审先看摘要与模型假设，再看求解过程与灵敏度分析。A 题资源调度与 B 题人口流动的差异在于：前者重视算法复杂度与约束条件处理，后者更看重数据拟合与情景推演。无论选哪题，摘要需在 300 字内写清问题、方法、结论与创新点。往届优秀论文的共同特征是假设明确、符号统一、图表可独立阅读。
+            </p>
+            <ul>
+              <li><strong>组队建议：</strong>建模、编程、写作三角色分工，避免一人包揽全部环节。</li>
+              <li><strong>时间分配：</strong>前 12 小时完成选题与假设，中间 40 小时求解，最后 20 小时写作与校验。</li>
+              <li><strong>引用规范：</strong>数据来源与算法出处需在参考文献中列明。</li>
+            </ul>
+
+            <h3>创意设计与商业案例：命题边界内的完成度</h3>
+            <p>
+              城市公共空间微更新挑战要求方案包含平面图、动线分析与材料预算，评审会重点看方案是否回应了居民真实使用场景。商业案例分析赛则要求从给定经营数据中推导结论，敏感性分析表是区分专业度的关键。两类赛事的共同点是：命题边界清晰，越界发挥反而可能失分，完成度与逻辑自洽优先于创意炫技。
+            </p>
+
+            <h3>新手专场与产业命题赛的选择逻辑</h3>
+            <p>
+              首次参赛者优先选择提供先修引导与导师驻场的新手赛道，其评审标准通常弱化技术复杂度，强调学习过程与团队协作记录。产业命题赛则适合已有项目经验的参赛者，企业命题往往附带真实数据与落地资源，但评审对可实施性的要求也更高。若目标是积累作品集，设计冲刺赛与产品原型赛的单位时间产出更可控。
+            </p>
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 / 消费路径 -->
+        <section class="block" id="guide">
+          <div class="block-head">
+            <h2>参赛选择与投入判断路径</h2>
+          </div>
+          <div class="step-list">
+            <div class="step-item">
+              <span class="step-num">1</span>
+              <div>
+                <h3>先按可投入时间筛选赛事类型</h3>
+                <p>只有半天可投入时，优先看商业案例分析或数据分析个人赛；有完整周末则考虑 48 小时编程马拉松；数学建模需要连续 72 小时窗口，适合提前协调日程。</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-num">2</span>
+              <div>
+                <h3>用评审权重判断是否匹配自身优势</h3>
+                <p>技术实现占比高的赛事适合开发能力强的参赛者；陈述与叙事占比高的路演类赛事适合有表达优势的团队。报名页通常公布评分权重，值得花十分钟逐项对照。</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-num">3</span>
+              <div>
+                <h3>比较同类赛事的提交物要求</h3>
+                <p>同样是编程马拉松，有的要求提交可运行原型与演示视频，有的只需代码仓库与说明文档。提交物越多，备赛成本越高，需结合团队人数与经验评估。</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-num">4</span>
+              <div>
+                <h3>查看往届作品与评审点评</h3>
+                <p>公布往届优秀作品的赛事，其评审偏好更容易判断。对比三份往届作品的共同结构，往往能提炼出该赛事的隐含评分标准。</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-num">5</span>
+              <div>
+                <h3>确认组队规则与资格限制</h3>
+                <p>部分赛事限学生身份或要求跨校组队，新手赛道可能限制参赛次数。报名前核对资格条款，避免备赛后因资格问题无法提交。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="block" id="faq">
+          <div class="block-head">
+            <h2>常见问题</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>编程马拉松一般多久出结果？</summary>
+              <div class="faq-answer">多数 48 小时赛事在提交截止后 3 至 7 个工作日内公布初评结果，进入决赛的队伍需再进行一次现场或线上演示。评审周期较长的赛事通常会在报名页注明时间表。</div>
+            </details>
+            <details>
+              <summary>数学建模和商业案例分析在准备方式上有什么区别？</summary>
+              <div class="faq-answer">数学建模更依赖事前熟悉论文结构与常用模型库，赛中时间主要用于假设与求解；商业案例分析更依赖对行业数据的理解与财务测算熟练度，赛前应熟悉损益表与敏感性分析模板。</div>
+            </details>
+            <details>
+              <summary>第一次参加每日大赛合集里的赛事，从哪类开始比较好？</summary>
+              <div class="faq-answer">建议从提供先修引导与导师驻场的新手赛道开始，或选择商业案例分析这类个人可报、提交物明确的赛事。首次参赛的目标应是完整走完提交流程，而非追求名次。</div>
+            </details>
+            <details>
+              <summary>创业路演的评审通常看哪些维度？</summary>
+              <div class="faq-answer">常见维度包括市场规模的测算依据、商业模式的可验证性、团队分工与项目阶段的匹配度、获客与复购假设的合理性。消费品牌专场还会额外关注渠道结构与供应链稳定性。</div>
+            </details>
+            <details>
+              <summary>创意设计挑战的命题边界如何把握？</summary>
+              <div class="faq-answer">先逐条对照命题要求中的必交内容，例如平面图、动线分析、预算范围。超出命题范围但未回应必交项的方案通常得分偏低，完成度与逻辑自洽优先于创意复杂度。</div>
+            </details>
+            <details>
+              <summary>同一天有多场赛事时怎么安排优先级？</summary>
+              <div class="faq-answer">先看提交截止时间的先后，再看评审权重是否匹配自身优势。若时间冲突，优先选择提交物更完整、能体现自身积累的赛事，放弃需要临时学习大量新工具的场次。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section class="block" id="comments">
+          <div class="block-head">
+            <h2>参赛者评论</h2>
+          </div>
+          <div class="comment-grid">
+
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">林</span><span class="nick">林一川</span><span class="date">11-08</span></div>
+              <p>城市数据挑战赛的评审细则把可复现性单列 15 分，这个改动很实在，逼着大家把清洗脚本也交上来。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">周</span><span class="nick">周明远</span><span class="date">11-08</span></div>
+              <p>数学建模模拟赛的 A 题约束条件给得挺细，但附件里的字段说明有两处需要对照答疑文档才看得懂。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">陈</span><span class="nick">陈书宜</span><span class="date">11-07</span></div>
+              <p>第一次报新手赛道，先修工作坊六个小时把环境搭好了，正式比赛时压力小很多。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">吴</span><span class="nick">吴承泽</span><span class="date">11-07</span></div>
+              <p>创业路演的 8 分钟陈述真的很难压缩，我练了五遍才把市场测算讲清楚，问答环节反而更从容。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">许</span><span class="nick">许知微</span><span class="date">11-06</span></div>
+              <p>城市公共空间微更新的答疑更新到第三版了，预算上限终于说清楚，之前方案按旧口径做的要返工。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">郑</span><span class="nick">郑亦航</span><span class="date">11-06</span></div>
+              <p>零售库存分析赛的数据集字段挺全，但脱敏后的门店编号和区域表需要自己关联，SQL 写得慢会卡住。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">何</span><span class="nick">何雨桐</span><span class="date">11-05</span></div>
+              <p>商业案例赛给的财务模板省了不少事，敏感性分析表按模板填完，结论部分才有时间打磨。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">孙</span><span class="nick">孙泊宁</span><span class="date">11-05</span></div>
+              <p>无障碍原型赛延长了提交窗口，但用户测试记录要三位目标用户，临时找人确实来不及。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">马</span><span class="nick">马嘉言</span><span class="date">11-04</span></div>
+              <p>48 小时编程马拉松的演示视频限 3 分钟，我们剪到 2 分 50 秒，留了十秒缓冲，现场没出问题。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">高</span><span class="nick">高梓萱</span><span class="date">11-04</span></div>
+              <p>创业路演新增消费品牌组别之后，评审提问明显更聚焦渠道和复购，科技类项目的问题反而泛一些。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">罗</span><span class="nick">罗启衡</span><span class="date">11-03</span></div>
+              <p>数学建模最后 20 小时用来写作和校验，这个时间分配在我参加的两次比赛里都验证有效。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">梁</span><span class="nick">梁思齐</span><span class="date">11-03</span></div>
+              <p>不同编程马拉松的提交物差别真大，一个要演示视频，一个只要仓库链接，报名前看清要求能省很多事。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">宋</span><span class="nick">宋清和</span><span class="date">11-02</span></div>
+              <p>数据分析个人赛门槛不高，但结论摘要要写清假设，不然评审会认为结论不可靠，这一点挺关键。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">唐</span><span class="nick">唐若琳</span><span class="date">11-02</span></div>
+              <p>新手赛道限额两百人，预报名之后还要确认正式报名，别错过确认时间，不然名额会被释放。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">韩</span><span class="nick">韩景行</span><span class="date">10-31</span></div>
+              <p>往届优秀作品里那份城市数据可视化原型，图层切换逻辑做得很干净，参考价值比想象中高。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-head"><span class="avatar">沈</span><span class="nick">沈知遇</span><span class="date">10-30</span></div>
+              <p>消费品牌路演的问答环节容易被追问获客成本，提前准备两套口径会比临场发挥稳很多。</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section class="block" id="news">
+          <div class="block-head">
+            <h2>赛事相关资讯</h2>
+          </div>
+          <div class="news-list">
+            <article class="news-item">
+              <img src="https://picsum.photos/seed/news-mathmodel/600/400" alt="数学建模模拟赛题目发布现场" width="600" height="400" loading="lazy">
+              <div class="news-body">
+                <h3>数学建模模拟赛 A/B 题发布，资源调度与人口流动成焦点</h3>
+                <p>今日 15:00 起进入 72 小时窗口，论文提交通道同步开放，组委会同步更新了摘要模板。</p>
+                <span class="date">2026-11-08</span>
+              </div>
+            </article>
+            <article class="news-item">
+              <img src="https://picsum.photos/seed/news-hackathon/600/400" alt="城市数据开放挑战赛评审细则更新" width="600" height="400" loading="lazy">
+              <div class="news-body">
+                <h3>城市数据挑战赛新增“数据可复现性”评分项</h3>
+                <p>该评分项占总分 15%，要求参赛队提交数据清洗脚本，评审将抽取部分队伍进行复现验证。</p>
+                <span class="date">2026-11-08</span>
+              </div>
+            </article>
+            <article class="news-item">
+              <img src="https://picsum.photos/seed/news-pitch/600/400" alt="创业路演秋季专场入围名单发布" width="600" height="400" loading="lazy">
+              <div class="news-body">
+                <h3>创业路演秋季专场公布 24 个入围项目</h3>
+                <p>入围项目覆盖消费品牌、企业服务与硬件方向，11 月 10 日进行线上彩排，14 日正式路演。</p>
+                <span class="date">2026-11-07</span>
+              </div>
+            </article>
+            <article class="news-item">
+              <img src="https://picsum.photos/seed/news-design/600/400" alt="城市公共空间微更新挑战赛答疑文档" width="600" height="400" loading="lazy">
+              <div class="news-body">
+                <h3>城市公共空间微更新挑战赛答疑更新至第三版</h3>
+                <p>补充预算上限与居民调研样本量要求，已提交方案可按新口径调整，提交窗口不变。</p>
+                <span class="date">2026-11-06</span>
+              </div>
+            </article>
+            <article class="news-item">
+              <img src="https://picsum.photos/seed/news-retail/600/400" alt="零售库存周转分析赛数据集发布" width="600" height="400" loading="lazy">
+              <div class="news-body">
+                <h3>零售库存分析赛开放 12 个月进销存数据集</h3>
+                <p>配套字段说明与脱敏规则同步发布，参赛者需自行关联门店与区域表完成异常识别。</p>
+                <span class="date">2026-11-05</span>
+              </div>
+            </article>
+            <article class="news-item">
+              <img src="https://picsum.photos/seed/news-newbie/600/400" alt="零基础编程马拉松新手赛道开放预报名" width="600" height="400" loading="lazy">
+              <div class="news-body">
+                <h3>零基础编程马拉松新手赛道开放预报名</h3>
+                <p>预报名可优先进入先修工作坊，正式报名 11 月 12 日开启，赛道限额 200 人。</p>
+                <span class="date">2026-11-02</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section class="block" id="related">
+          <div class="block-head">
+            <h2>延伸赛事方向</h2>
+          </div>
+          <div class="recommend-tags">
+            <a href="/#featured">公共数据可视化方向</a>
+            <a href="/#featured">消费品牌增长案例</a>
+            <a href="/#featured">无障碍交互设计</a>
+            <a href="/#featured">城市空间微更新</a>
+            <a href="/#featured">库存周转异常诊断</a>
+            <a href="/#featured">路演问答准备清单</a>
+            <a href="/#featured">建模论文摘要写法</a>
+            <a href="/#featured">新手先修工作坊</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：热门榜单 -->
+        <section class="block" id="ranking">
+          <div class="block-head">
+            <h2>本周赛事热度榜</h2>
+            <a class="more" href="/#updates">查看赛程 →</a>
+          </div>
+          <div class="ranking-list">
+            <div class="rank-item">
+              <span class="rank-num">1</span>
+              <div class="rank-body"><strong>城市数据开放 48 小时挑战</strong><span>编程马拉松 · 11-08 开赛</span></div>
+              <span class="rank-score">9,820</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">2</span>
+              <div class="rank-body"><strong>秋季消费品牌路演专场</strong><span>创业路演 · 11-10 报名截止</span></div>
+              <span class="rank-score">7,460</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">3</span>
+              <div class="rank-body"><strong>72 小时数学建模模拟赛</strong><span>数学建模 · 今日 15:00 发题</span></div>
+              <span class="rank-score">6,130</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">4</span>
+              <div class="rank-body"><strong>城市公共空间微更新挑战</strong><span>创意设计 · 命题已公布</span></div>
+              <span class="rank-score">5,870</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">5</span>
+              <div class="rank-body"><strong>新茶饮品牌增长案例分析赛</strong><span>商业案例 · 11-07 已开题</span></div>
+              <span class="rank-score">4,950</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">6</span>
+              <div class="rank-body"><strong>无障碍产品原型冲刺赛</strong><span>产品原型 · 11-09 截止</span></div>
+              <span class="rank-score">4,320</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">7</span>
+              <div class="rank-body"><strong>零售库存周转分析实战赛</strong><span>数据分析 · 进行中</span></div>
+              <span class="rank-score">3,980</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">8</span>
+              <div class="rank-body"><strong>零基础编程马拉松新手赛道</strong><span>新手专场 · 11-12 开放报名</span></div>
+              <span class="rank-score">3,740</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右辅助栏 -->
+      <aside class="side-col" aria-label="辅助信息">
+        <div class="side-panel">
+          <h2>本地查找</h2>
+          <div class="search-box">
+            <input type="search" id="search-input" placeholder="输入赛事名称或类型…" aria-label="查找赛事">
+            <button type="button" id="search-btn">查找</button>
+          </div>
+          <div class="search-feedback" id="search-feedback" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="side-panel">
+          <h2>今日截止提醒</h2>
+          <ul class="side-list">
+            <li><a href="/#featured">数学建模模拟赛 · 11-11 15:00 截止</a><span class="side-date">剩余 72 小时窗口</span></li>
+            <li><a href="/#featured">无障碍产品原型冲刺赛 · 11-09 23:59 截止</a><span class="side-date">明天截止</span></li>
+            <li><a href="/#featured">创业路演秋季专场 · 11-10 报名截止</a><span class="side-date">后天截止</span></li>
+            <li><a href="/#featured">零售库存分析赛 · 11-12 提交截止</a><span class="side-date">剩余 4 天</span></li>
+          </ul>
+        </div>
+
+        <div class="side-panel">
+          <h2>评审权重速查</h2>
+          <div class="side-rule">
+            <b>编程马拉松</b>
+            <ul>
+              <li>数据故事 35%</li>
+              <li>原型完整度 35%</li>
+              <li>演示表达 20%</li>
+              <li>可复现性 10%</li>
+            </ul>
+          </div>
+          <div class="side-rule" style="margin-top:12px;">
+            <b>创业路演</b>
+            <ul>
+              <li>市场测算 30%</li>
+              <li>模式验证 30%</li>
+              <li>团队匹配 25%</li>
+              <li>陈述表达 15%</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="side-panel">
+          <h2>新手推荐入口</h2>
+          <ul class="side-list">
+            <li><a href="/#featured">零基础编程马拉松新手赛道</a><span class="side-date">先修工作坊 + 导师驻场</span></li>
+            <li><a href="/#featured">零售库存周转分析实战赛</a><span class="side-date">个人可报 · 提交物明确</span></li>
+            <li><a href="/#featured">新茶饮品牌增长案例分析赛</a><span class="side-date">四人组队 · 财务模板齐全</span></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-foot">
+    <div class="foot-inner">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16v3H4zM4 12h11v3H4z" fill="#fff"/>
+              <circle cx="18.5" cy="17.5" r="3.5" fill="#f4a261"/>
+            </svg>
+          </span>
+          <strong>每日大赛合集</strong>
+        </div>
+        <p class="foot-desc">聚合编程马拉松、创业路演、数学建模、创意设计等每日可参与赛事，提供赛程速览、评审维度解析与参赛判断依据。</p>
+      </div>
+      <div class="foot-col">
+        <h3>赛事频道</h3>
+        <ul>
+          <li><a href="/#featured">编程马拉松</a></li>
+          <li><a href="/#featured">创业路演</a></li>
+          <li><a href="/#featured">数学建模</a></li>
+          <li><a href="/#featured">创意设计</a></li>
+          <li><a href="/#featured">商业案例</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>内容栏目</h3>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#updates">今日动态</a></li>
+          <li><a href="/#deepdive">深度解析</a></li>
+          <li><a href="/#guide">参与指南</a></li>
+          <li><a href="/#ranking">热度榜单</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>帮助与问答</h3>
+        <ul>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">参赛者评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#related">延伸方向</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 每日大赛合集 · 内容归档</span>
+      <span>部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // 搜索筛选：在精选卡片、动态、榜单中查找并高亮
+      var input = document.getElementById('search-input');
+      var btn = document.getElementById('search-btn');
+      var feedback = document.getElementById('search-feedback');
+      if (!input || !btn || !feedback) return;
+
+      var searchables = Array.prototype.slice.call(
+        document.querySelectorAll('.event-card, .update-item, .rank-item, .news-item, .cat-item')
+      );
+
+      // 记录原始背景
+      searchables.forEach(function (el) {
+        el.dataset.origBg = el.style.background || '';
+      });
+
+      function resetHighlights() {
+        searchables.forEach(function (el) {
+          el.style.background = el.dataset.origBg;
+          el.style.boxShadow = '';
+        });
+      }
+
+      function doSearch() {
+        var q = input.value.trim().toLowerCase();
+        resetHighlights();
+        if (!q) {
+          feedback.textContent = '';
+          return;
+        }
+        var hits = 0;
+        searchables.forEach(function (el) {
+          var text = (el.textContent || '').toLowerCase();
+          if (text.indexOf(q) !== -1) {
+            hits++;
+            el.style.background = '#fff8ec';
+            el.style.boxShadow = 'inset 0 0 0 2px #f4a261';
+          }
+        });
+        if (hits === 0) {
+          feedback.textContent = '未找到匹配“' + input.value.trim() + '”的赛事，请尝试其他关键词。';
+        } else {
+          feedback.textContent = '找到 ' + hits + ' 条相关结果，已在下方高亮。';
+        }
+      }
+
+      btn.addEventListener('click', doSearch);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          doSearch();
+        }
+      });
+      input.addEventListener('input', function () {
+        if (!input.value.trim()) {
+          resetHighlights();
+          feedback.textContent = '';
+        }
+      });
+    })();
+  </script>
+
+</body>
+                                          </html>
